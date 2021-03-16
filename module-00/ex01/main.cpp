@@ -6,11 +6,11 @@
 /*   By: sohechai <sohechai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/15 13:48:02 by sohechai          #+#    #+#             */
-/*   Updated: 2021/03/16 12:02:39 by sohechai         ###   ########lyon.fr   */
+/*   Updated: 2021/03/16 12:24:39 by sohechai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/contact.class.hpp"
+#include "contact.class.hpp"
 
 void		resize(std::string str)
 {
