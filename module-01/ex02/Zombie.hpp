@@ -1,40 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Pony.hpp                                           :+:      :+:    :+:   */
+/*   Zombie.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sohechai <sohechai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/16 12:45:33 by sohechai          #+#    #+#             */
-/*   Updated: 2021/03/16 20:16:39 by sohechai         ###   ########lyon.fr   */
+/*   Created: 2021/03/16 16:26:26 by sohechai          #+#    #+#             */
+/*   Updated: 2021/03/16 21:35:34 by sohechai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PONY_HPP
-# define PONY_HPP
+#ifndef ZOMBIE_HPP
+# define ZOMBIE_HPP
 # include <iostream>
 # include <sstream>
 # include <iomanip>
 # include <cstring>
+# include <random>
 
-class		Pony
+class		Zombie
 {
 	public:
 
-	Pony();
-	Pony(std::string name, std::string color, std::string age);
-	~Pony(void);
+	Zombie(void);
+	Zombie(std::string name, std::string type);
+	~Zombie(void);
+
+	void	advert();
 
 
 	private:
 
 	std::string _name;
-	std::string _color;
-	std::string _age;
-	std::string _ability;
+	std::string _type;
 };
-
-	Pony	ponyOnTheStack(std::string name, std::string color, std::string age);
-	Pony	*ponyOnTheHeap(std::string name, std::string color, std::string age);
 
 #endif
