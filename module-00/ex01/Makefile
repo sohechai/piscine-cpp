@@ -6,7 +6,7 @@
 #    By: sohechai <sohechai@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/15 13:35:52 by sohechai          #+#    #+#              #
-#    Updated: 2021/03/16 12:24:58 by sohechai         ###   ########lyon.fr    #
+#    Updated: 2021/03/16 13:21:44 by sohechai         ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,7 @@ HEADER		=	./contact.class.hpp
 
 OBJS		=	$(SRCS:.cpp=.o)
 
-GCC			=	g++
+GCC			=	clang++
 
 FLAGS		=	-Wall -Werror -Wextra
 
