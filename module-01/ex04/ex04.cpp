@@ -1,38 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   ex04.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sohechai <sohechai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/16 16:26:30 by sohechai          #+#    #+#             */
-/*   Updated: 2021/03/17 21:56:45 by sohechai         ###   ########lyon.fr   */
+/*   Created: 2021/03/17 21:57:35 by sohechai          #+#    #+#             */
+/*   Updated: 2021/03/17 22:09:19 by sohechai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
-#include "ZombieEvent.hpp"
+#include <string>
+#include <iostream>
 
 int		main(void)
 {
-	Zombie		*zombie1;
-	Zombie		*zombie2;
-	ZombieEvent zombieEvent;
-	int		time;
-	time = 0;
+	std::string 	str = "HI THIS IS BRAIN";
+	std::string*	strPtr = &str;
+	std::string&	strRef = str;
 
-	zombieEvent.setZombieType("Carnivor");
-	zombie1 = zombieEvent.randomChump();
-	zombie1->advert();
-
-	usleep(1000000);
-
-	zombieEvent.setZombieType("Herbivor");
-	zombie2 = zombieEvent.randomChump();
-	zombie2->advert();
-
-	delete	zombie1;
-	delete	zombie2;
+	std::cout << "pointer : " << *strPtr << std::endl;
+	std::cout << "reference : " << strRef << std::endl;
 
 	return (0);
 }

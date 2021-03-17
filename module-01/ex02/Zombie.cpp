@@ -6,13 +6,13 @@
 /*   By: sohechai <sohechai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/16 16:26:28 by sohechai          #+#    #+#             */
-/*   Updated: 2021/03/16 22:46:47 by sohechai         ###   ########lyon.fr   */
+/*   Updated: 2021/03/17 21:04:27 by sohechai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
-Zombie::Zombie(std::string type, std::string name) : _name(name), _type(type)
+Zombie::Zombie(std::string type, std::string name) : _type(type), _name(name)
 {
 	return ;
 }

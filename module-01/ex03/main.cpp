@@ -5,34 +5,19 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: sohechai <sohechai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/16 16:26:30 by sohechai          #+#    #+#             */
-/*   Updated: 2021/03/17 21:56:45 by sohechai         ###   ########lyon.fr   */
+/*   Created: 2021/03/17 16:32:55 by sohechai          #+#    #+#             */
+/*   Updated: 2021/03/17 21:51:03 by sohechai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "ZombieHorde.hpp"
 #include "Zombie.hpp"
-#include "ZombieEvent.hpp"
 
 int		main(void)
 {
-	Zombie		*zombie1;
-	Zombie		*zombie2;
-	ZombieEvent zombieEvent;
-	int		time;
-	time = 0;
+	ZombieHorde	zombieHorde = ZombieHorde(10);
 
-	zombieEvent.setZombieType("Carnivor");
-	zombie1 = zombieEvent.randomChump();
-	zombie1->advert();
-
-	usleep(1000000);
-
-	zombieEvent.setZombieType("Herbivor");
-	zombie2 = zombieEvent.randomChump();
-	zombie2->advert();
-
-	delete	zombie1;
-	delete	zombie2;
+	zombieHorde.announce();
 
 	return (0);
 }

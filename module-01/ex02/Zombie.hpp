@@ -6,7 +6,7 @@
 /*   By: sohechai <sohechai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/16 16:26:26 by sohechai          #+#    #+#             */
-/*   Updated: 2021/03/16 21:35:34 by sohechai         ###   ########lyon.fr   */
+/*   Updated: 2021/03/17 19:36:49 by sohechai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ class		Zombie
 	public:
 
 	Zombie(void);
-	Zombie(std::string name, std::string type);
+	Zombie(std::string type, std::string name);
 	~Zombie(void);
 
 	void	advert();
@@ -31,8 +31,9 @@ class		Zombie
 
 	private:
 
-	std::string _name;
 	std::string _type;
+	std::string _name;
+
 };
 
 #endif

@@ -1,41 +1,60 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ZombieEvent.cpp                                    :+:      :+:    :+:   */
+/*   Zombie.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sohechai <sohechai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/16 16:26:35 by sohechai          #+#    #+#             */
-/*   Updated: 2021/03/17 21:55:31 by sohechai         ###   ########lyon.fr   */
+/*   Created: 2021/03/16 16:26:28 by sohechai          #+#    #+#             */
+/*   Updated: 2021/03/17 21:49:15 by sohechai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ZombieEvent.hpp"
 #include "Zombie.hpp"
+#include <unistd.h>
 
-ZombieEvent::ZombieEvent()
+Zombie::Zombie(std::string type, std::string name) : _type(type), _name(name)
 {
 	return ;
 }
 
-ZombieEvent::~ZombieEvent()
+Zombie::Zombie()
 {
+    return ;
+}
+
+Zombie::~Zombie()
+{
+	std::cout << "\033[31m";
+	std::cout << this->_name << "  : - i am dying .. Byee..\033[0m" << std::endl;
+	usleep(300000);
 	return ;
 }
 
-void			ZombieEvent::setZombieType(std::string type)
+void			Zombie::advert()
+{
+	std::cout << "\033[32m<" << this->_name << " (" << this->_type << ")> Braiiiiiiinnnssss ...\033[0m" << std::endl;
+	std::cout << "New zombie " << this->_name << " is up ! :o" << std::endl;
+	std::cout << "New zombie is a " << this->_type << " .." << std::endl;
+	std::cout << std::endl;
+}
+
+void			Zombie::setZombieType(std::string type)
 {
 	this->_type = type;
+
+	return ;
 }
 
-Zombie			*ZombieEvent::newZombie(std::string name)
+void	Zombie::set_ZombieName(std::string name)
 {
-	return (new Zombie(this->_type, name));
+	this->_name = name;
+
+	return ;
 }
 
-Zombie			*ZombieEvent::randomChump()
+std::string		Zombie::randomChump()
 {
-	Zombie			*zombie;
 	std::string		names[24] = {"Alpha", "Beta", "Gamma", "Delta",
 		"Epsilon", "Zeta", "Eta", "Theta", "Iota", "Kappa", "Lambda",
 		"Mu", "Nu", "Xi", "Omicron", "Pi", "Rho", "Sigma", "Tau",
@@ -47,7 +66,5 @@ Zombie			*ZombieEvent::randomChump()
 	std::srand(time(NULL));
 	int random = rand() % (max - min) + min + 1;
 
-	zombie = this->newZombie(names[random]);
-
-	return (zombie);
+	return (names[random]);
 }

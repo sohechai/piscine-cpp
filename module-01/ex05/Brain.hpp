@@ -1,39 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ZombieEvent.hpp                                    :+:      :+:    :+:   */
+/*   Brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sohechai <sohechai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/16 16:26:37 by sohechai          #+#    #+#             */
-/*   Updated: 2021/03/17 21:55:31 by sohechai         ###   ########lyon.fr   */
+/*   Created: 2021/03/17 22:12:13 by sohechai          #+#    #+#             */
+/*   Updated: 2021/03/17 22:29:48 by sohechai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ZOMBIEENVENT_HPP
-# define ZOMBIEENVENT_HPP
+#ifndef BRAIN_HPP
+# define BRAIN_HPP
 # include <iostream>
-# include <sstream>
-# include <iomanip>
-# include <cstring>
-# include <string>
-#include <unistd.h>
-# include "Zombie.hpp"
 
-class		ZombieEvent
+class		Brain
 {
 	public:
 
-	ZombieEvent();
-	~ZombieEvent();
+	Brain();
+	~Brain();
 
-	Zombie			*newZombie(std::string);
-	Zombie			*randomChump();
-	void			setZombieType(std::string);
+	std::string		identify();
+
 
 	private:
 
-	std::string		_type;
+	std::string		_Cortex;
+	std::string		_Thalamus;
+	std::string		_Hypothalamus;
+	std::string		_Amygdale;
+
+
 };
 
 #endif
