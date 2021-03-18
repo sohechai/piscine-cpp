@@ -1,21 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   HumanB.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sohechai <sohechai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/17 22:12:20 by sohechai          #+#    #+#             */
-/*   Updated: 2021/03/18 22:34:06 by sohechai         ###   ########lyon.fr   */
+/*   Created: 2021/03/18 22:35:36 by sohechai          #+#    #+#             */
+/*   Updated: 2021/03/18 23:44:00 by sohechai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Brain.hpp"
-#include "Human.hpp"
+#include "HumanB.hpp"
 
-int main()
+HumanB::HumanB()
 {
-	Human bob;
-	std::cout << bob.identify() << std::endl;
-	std::cout << bob.getBrain().identify() << std::endl;
+	return ;
+}
+
+HumanB::HumanB(std::string name) : _name(name)
+{
+	return ;
+}
+
+HumanB::~HumanB()
+{
+	return ;
+}
+
+void		HumanB::setWeapon(Weapon &weapon)
+{
+	this->_weapon = &weapon;
+}
+
+void		HumanB::attack()
+{
+	std::cout << this->_name << " attacks with his " << this->_weapon->getType()
+		<< std::endl;
 }

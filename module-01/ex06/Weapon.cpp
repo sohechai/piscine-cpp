@@ -1,21 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Weapon.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sohechai <sohechai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/17 22:12:20 by sohechai          #+#    #+#             */
-/*   Updated: 2021/03/18 22:34:06 by sohechai         ###   ########lyon.fr   */
+/*   Created: 2021/03/18 22:35:43 by sohechai          #+#    #+#             */
+/*   Updated: 2021/03/18 23:00:42 by sohechai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Brain.hpp"
-#include "Human.hpp"
+#include "Weapon.hpp"
 
-int main()
+Weapon::Weapon()
 {
-	Human bob;
-	std::cout << bob.identify() << std::endl;
-	std::cout << bob.getBrain().identify() << std::endl;
+	return ;
+}
+
+Weapon::Weapon(std::string type) : _type(type)
+{
+	return ;
+}
+
+Weapon::~Weapon()
+{
+	return ;
+}
+
+std::string 	Weapon::getType(void) const
+{
+	return (this->_type);
+}
+
+void			Weapon::setType(std::string buffer)
+{
+	this->_type = buffer;
 }
