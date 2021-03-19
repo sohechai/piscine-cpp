@@ -6,7 +6,7 @@
 /*   By: sohechai <sohechai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/15 13:48:02 by sohechai          #+#    #+#             */
-/*   Updated: 2021/03/16 19:44:14 by sohechai         ###   ########lyon.fr   */
+/*   Updated: 2021/03/19 15:28:52 by sohechai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,11 +25,11 @@ void		display_contact(int nb_of_contact, Phonebook *contact)
 	std::string buffer;
 	std::stringstream ss;
 
-	i = 1;
+	i = 0;
 	std::cout << "|     index|    prenom|nom de fam|    pseudo|" << std::endl;
-	for (int index = 1; index <= nb_of_contact; index++)
+	for (int index = 0; index < nb_of_contact; index++)
 	{
-		std::cout << "|         " << index;
+		std::cout << "|         " << index + 1;
 		std::cout << "|";
 		resize(contact[index].get_first_name());
 		resize(contact[index].get_last_name());
@@ -46,6 +46,7 @@ void		display_contact(int nb_of_contact, Phonebook *contact)
 	ss >> i;
 	if (i > 0 && i <= nb_of_contact)
 	{
+		i -= 1;
 		std::cout << "You choose index number : " << i << std::endl;
 		std::cout << "\e[1;35m...\033[0m" << std::endl;
 		std::cout << "First name : " << contact[i].get_first_name() << std::endl;
@@ -142,15 +143,16 @@ int		main(void)
 		{
 			if (nb_of_contact >= 8)
 			{
-				std::cout << "Can't add more than 8 contacts.." << std::endl;
+				std::cout << "Can't add more than 8 contacts.." << std::endl << std::endl;
+				std::cout << "Please, enter a command (ADD, SEARCH or EXIT) : " << std::endl;
 			}
 			else
 			{
 				std::cout << "\e[1;35mLoading .\033[0m" << std::endl;
 				std::cout << "\e[1;35mLoading ..\033[0m" << std::endl;
 				std::cout << "\e[1;35mLoading ...\033[0m" << std::endl;
-				nb_of_contact++;
 				contact[nb_of_contact] = add_newcontact(contact[nb_of_contact]);
+				nb_of_contact++;
 			}
 		}
 		else if (command == "SEARCH")

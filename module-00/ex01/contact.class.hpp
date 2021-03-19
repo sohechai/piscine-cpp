@@ -6,7 +6,7 @@
 /*   By: sohechai <sohechai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/15 18:44:22 by sohechai          #+#    #+#             */
-/*   Updated: 2021/03/16 19:32:42 by sohechai         ###   ########lyon.fr   */
+/*   Updated: 2021/03/19 15:33:00 by sohechai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@ class		Phonebook
 {
 	public:
 
-	Phonebook(void);
-	~Phonebook(void);
+	Phonebook();
+	~Phonebook();
 
 	std::string 	get_first_name(void) const;
 	std::string 	get_last_name(void) const;

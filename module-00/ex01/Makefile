@@ -6,7 +6,7 @@
 #    By: sohechai <sohechai@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/15 13:35:52 by sohechai          #+#    #+#              #
-#    Updated: 2021/03/16 13:21:44 by sohechai         ###   ########lyon.fr    #
+#    Updated: 2021/03/19 15:34:25 by sohechai         ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,7 +21,7 @@ OBJS		=	$(SRCS:.cpp=.o)
 
 GCC			=	clang++
 
-FLAGS		=	-Wall -Werror -Wextra
+FLAGS		=	-Wall -Werror -Wextra 
 
 all: $(NAME)
 

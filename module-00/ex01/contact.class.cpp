@@ -6,18 +6,18 @@
 /*   By: sohechai <sohechai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/15 22:33:39 by sohechai          #+#    #+#             */
-/*   Updated: 2021/03/16 19:41:14 by sohechai         ###   ########lyon.fr   */
+/*   Updated: 2021/03/19 15:33:05 by sohechai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "contact.class.hpp"
 
-Phonebook::Phonebook(void)
+Phonebook::Phonebook()
 {
 	return ;
 }
 
-Phonebook::~Phonebook(void)
+Phonebook::~Phonebook()
 {
 	return ;
 }
