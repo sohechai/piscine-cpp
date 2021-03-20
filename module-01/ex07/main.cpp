@@ -6,38 +6,56 @@
 /*   By: sohechai <sohechai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 23:52:18 by sohechai          #+#    #+#             */
-/*   Updated: 2021/03/19 15:52:46 by sohechai         ###   ########lyon.fr   */
+/*   Updated: 2021/03/20 22:41:17 by sohechai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "replace.hpp"
+#include <iostream>
 #include <fstream>
+#include <string>
+
+int			ft_strlen(std::string str)
+{
+	int		i;
+
+	i = 0;
+	while (str[i] != '\0')
+		i++;
+	return (i);
+}
 
 void			ft_replace(std::string file, std::string s1, std::string s2)
 {
+	size_t			found;
+	size_t			pos = 0;
+	size_t			s1len = ft_strlen(s1);
+	size_t			s2len = ft_strlen(s2);
 	std::string		str;
 	std::ifstream	ifs(file);
-	std::getline(ifs, str);
-
-	for (int i = 0; str[i] != '\0'; i++)
+	if (ifs.fail())
 	{
-		if (str[i] == 'e')
-		{
-			str[i] = 'i';
-			i++;
-		}
+		std::cout << "\033[91m[Error] Could't open your file.\033[0m" << std::endl;
+		return ;
 	}
+	std::getline(ifs, str, '\0');
 	ifs.close();
+	while (str.find(s1, pos) != std::string::npos)
+	{
+		found = str.find(s1, pos);
+		str.replace(found, s1len, s2);
+		pos = (size_t)found + s2len;
+	}
 	std::ofstream	ofs("FILENAME.replace");
-	ofs << str << std::endl;
+	ofs << str;
 	ofs.close();
+	return ;
 }
 
 int		main(int argc, char **argv)
 {
 	if (argc != 4)
 	{
-		std::cout << "Please enter a file name, and 2 strings" << std::endl;
+		std::cout << "\033[91m[Error] Enter a file name, and 2 strings.\033[0m" << std::endl;
 	}
 	else
 	{

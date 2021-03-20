@@ -6,16 +6,13 @@
 #    By: sohechai <sohechai@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/18 23:51:23 by sohechai          #+#    #+#              #
-#    Updated: 2021/03/18 23:52:05 by sohechai         ###   ########lyon.fr    #
+#    Updated: 2021/03/20 19:33:27 by sohechai         ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
 NAME		=	replace
 
 SRCS		=	./main.cpp \
-				./replace.cpp
-
-HEADER		=	./replace.hpp
 
 OBJS		=	$(SRCS:.cpp=.o)
 
@@ -25,7 +22,7 @@ FLAGS		=	-Wall -Werror -Wextra
 
 all: $(NAME)
 
-$(NAME): $(OBJS) $(HEADER)
+$(NAME): $(OBJS)
 	@$(GCC) $(OBJS) -o $@
 
 %.o: %.cpp %.hpp
