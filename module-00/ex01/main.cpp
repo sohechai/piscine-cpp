@@ -6,16 +6,24 @@
 /*   By: sohechai <sohechai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/15 13:48:02 by sohechai          #+#    #+#             */
-/*   Updated: 2021/03/19 15:28:52 by sohechai         ###   ########lyon.fr   */
+/*   Updated: 2021/03/23 16:43:07 by sohechai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "contact.class.hpp"
+#include "phonebook.hpp"
 
 void		resize(std::string str)
 {
-	str.resize(10, ' ');
-	std::cout << str;
+	if (str.length() <= 10)
+	{
+		std::cout << std::setw(10);
+		std::cout << str;
+	}
+	else
+	{
+		str.resize(9);
+		std::cout << str << ".";
+	}
 	std::cout << "|";
 }
 
@@ -62,7 +70,7 @@ void		display_contact(int nb_of_contact, Phonebook *contact)
 		std::cout << "Darkest secret : " << contact[i].get_darkest_secret() << std::endl;
 		std::cout << "\e[1;35m...\033[0m" << std::endl;
 	}
-	else if (i > nb_of_contact || i == 0)
+	else if (i > nb_of_contact || i <= 0)
 		std::cout << "wrong index .." << std::endl;
 	std::cout << std::endl << "you can now ADD, SEARCH or EXIT :" << std::endl;
 	return ;

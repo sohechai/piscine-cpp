@@ -6,7 +6,7 @@
 /*   By: sohechai <sohechai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/15 11:33:02 by sohechai          #+#    #+#             */
-/*   Updated: 2021/03/15 14:11:36 by sohechai         ###   ########lyon.fr   */
+/*   Updated: 2021/03/23 16:43:18 by sohechai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,7 @@ void		ft_megaphone(int argc, char **argv)
 	for (int i = 1; i < argc; i++)
 	{
 		for (int j = 0; argv[i][j] != '\0'; j++)
-		{
 			std::cout << (char)toupper(argv[i][j]);
-		}
 	}
 	std::cout << std::endl;
 	return ;

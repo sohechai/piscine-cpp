@@ -6,16 +6,16 @@
 #    By: sohechai <sohechai@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/15 13:35:52 by sohechai          #+#    #+#              #
-#    Updated: 2021/03/20 18:26:55 by sohechai         ###   ########lyon.fr    #
+#    Updated: 2021/03/23 16:18:09 by sohechai         ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
 NAME		= phonebook
 
-SRCS		=	./contact.class.cpp \
+SRCS		=	./phonebook.cpp \
 				./main.cpp
 
-HEADER		=	./contact.class.hpp
+HEADER		=	./phonebook.hpp
 
 OBJS		=	$(SRCS:.cpp=.o)
 
