@@ -6,13 +6,14 @@
 /*   By: sohechai <sohechai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/23 15:24:09 by sohechai          #+#    #+#             */
-/*   Updated: 2021/03/23 18:05:42 by sohechai         ###   ########lyon.fr   */
+/*   Updated: 2021/03/24 16:46:23 by sohechai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FIXED_HPP
 # define FIXED_HPP
 # include <iostream>
+# include <cmath>
 
 class		Fixed
 {

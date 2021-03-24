@@ -6,7 +6,7 @@
 /*   By: sohechai <sohechai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/23 15:24:07 by sohechai          #+#    #+#             */
-/*   Updated: 2021/03/23 18:07:32 by sohechai         ###   ########lyon.fr   */
+/*   Updated: 2021/03/24 16:55:18 by sohechai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,14 +18,18 @@ Fixed::Fixed(void) : _val(0)
 	return ;
 }
 
-Fixed::Fixed(const int)
+Fixed::Fixed(const int n)
 {
-
+	std::cout << "Int constructor called" << std::endl;
+	this->_val = n;
+	return ;
 }
 
-Fixed::Fixed(const float)
+Fixed::Fixed(const float n)
 {
-
+	std::cout << "Float constructor called" << std::endl;
+	this->_val = (n * 100) + 0.5;
+	return ;
 }
 
 Fixed::Fixed(Fixed const & src)
@@ -44,17 +48,24 @@ Fixed::~Fixed(void)
 
 float 				Fixed::toFloat(void) const
 {
+	float		nb;
 
+	nb = (float)this->_val / 100;
+	return (nb);
 }
 
 int					Fixed::toInt(void) const
 {
-
+	if (this->_val >= 0)
+		return ((int) this->_val + 0.5);
+	else
+		return ((int) this->_val - 0.5);
+	return (0);
 }
 
 int 				Fixed::getRawBits(void) const
 {
-	std::cout << "getRawBits member function called" << std::endl;
+	// std::cout << "getRawBits member function called" << std::endl;
 	return (this->_val);
 }
 
@@ -74,7 +85,7 @@ Fixed&				Fixed::operator=(Fixed const & rhs)
 
 std::ostream&			operator << (std::ostream &o, Fixed const &i)
 {
-	o << "The value of _raw is : " << i.getRawBits();
+	o << i.toFloat();
 
 	return (o);
 }
@@ -91,6 +102,7 @@ int main(void) {
 	std::cout << "b is " << b << std::endl;
 	std::cout << "c is " << c << std::endl;
 	std::cout << "d is " << d << std::endl;
+
 	std::cout << "a is " << a.toInt() << " as integer" << std::endl;
 	std::cout << "b is " << b.toInt() << " as integer" << std::endl;
 	std::cout << "c is " << c.toInt() << " as integer" << std::endl;

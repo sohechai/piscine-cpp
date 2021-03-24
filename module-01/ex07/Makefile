@@ -6,7 +6,7 @@
 #    By: sohechai <sohechai@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/18 23:51:23 by sohechai          #+#    #+#              #
-#    Updated: 2021/03/20 19:33:27 by sohechai         ###   ########lyon.fr    #
+#    Updated: 2021/03/24 17:44:33 by sohechai         ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,14 +16,12 @@ SRCS		=	./main.cpp \
 
 OBJS		=	$(SRCS:.cpp=.o)
 
-GCC			=	clang++
-
 FLAGS		=	-Wall -Werror -Wextra
 
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	@$(GCC) $(OBJS) -o $@
+	@clang++ $(OBJS) -o $@
 
 %.o: %.cpp %.hpp
 	@$(GCC) $(FLAGS) -o $@ -c $<
