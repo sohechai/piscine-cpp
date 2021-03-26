@@ -6,7 +6,7 @@
 /*   By: sohechai <sohechai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/23 15:24:09 by sohechai          #+#    #+#             */
-/*   Updated: 2021/03/24 16:46:23 by sohechai         ###   ########lyon.fr   */
+/*   Updated: 2021/03/26 21:53:18 by sohechai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ class		Fixed
 	Fixed(Fixed const & src);
 	~Fixed(void);
 
-	Fixed &      		operator=(Fixed const & rhs);
+	Fixed&	      		operator=(Fixed const & rhs);
 	float 				toFloat(void) const;
 	int					toInt(void) const;
 	int 				getRawBits(void) const;

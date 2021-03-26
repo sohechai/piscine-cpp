@@ -6,7 +6,7 @@
 /*   By: sohechai <sohechai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/23 15:24:07 by sohechai          #+#    #+#             */
-/*   Updated: 2021/03/24 16:55:18 by sohechai         ###   ########lyon.fr   */
+/*   Updated: 2021/03/26 23:39:30 by sohechai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,57 +15,56 @@
 Fixed::Fixed(void) : _val(0)
 {
 	std::cout << "Default constructor called" << std::endl;
+
 	return ;
 }
 
 Fixed::Fixed(const int n)
 {
 	std::cout << "Int constructor called" << std::endl;
-	this->_val = n;
+
+	this->_val = n * std::pow(2, _raw);
+
 	return ;
 }
 
 Fixed::Fixed(const float n)
 {
 	std::cout << "Float constructor called" << std::endl;
-	this->_val = (n * 100) + 0.5;
+
+	this->_val = roundf(n * std::pow(2, _raw));
+
 	return ;
 }
 
-Fixed::Fixed(Fixed const & src)
+Fixed::Fixed(Fixed const &src)
 {
 	std::cout << "Copy constructor called" << std::endl;
 
 	*this = src;
+
 	return ;
 }
 
 Fixed::~Fixed(void)
 {
 	std::cout << "Destructor called" << std::endl;
+
 	return ;
 }
 
 float 				Fixed::toFloat(void) const
 {
-	float		nb;
-
-	nb = (float)this->_val / 100;
-	return (nb);
+	return (this->_val / std::pow(2, _raw));
 }
 
 int					Fixed::toInt(void) const
 {
-	if (this->_val >= 0)
-		return ((int) this->_val + 0.5);
-	else
-		return ((int) this->_val - 0.5);
-	return (0);
+	return (this->_val / std::pow(2, _raw));
 }
 
 int 				Fixed::getRawBits(void) const
 {
-	// std::cout << "getRawBits member function called" << std::endl;
 	return (this->_val);
 }
 
@@ -74,7 +73,7 @@ void 				Fixed::setRawBits(int const raw)
 	this->_val = raw;
 }
 
-Fixed&				Fixed::operator=(Fixed const & rhs)
+Fixed&			Fixed::operator=(Fixed const &rhs)
 {
 	std::cout << "Assignation operator called" << std::endl;
 	if (this != &rhs)
