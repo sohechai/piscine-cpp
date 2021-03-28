@@ -6,7 +6,7 @@
 /*   By: sohechai <sohechai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/16 16:26:35 by sohechai          #+#    #+#             */
-/*   Updated: 2021/03/17 21:55:31 by sohechai         ###   ########lyon.fr   */
+/*   Updated: 2021/03/28 16:42:37 by sohechai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ Zombie			*ZombieEvent::randomChump()
 	int	max = 23;
 
 	std::srand(time(NULL));
-	int random = rand() % (max - min) + min + 1;
+	int random = std::rand() % (max - min) + min + 1;
 
 	zombie = this->newZombie(names[random]);
 
