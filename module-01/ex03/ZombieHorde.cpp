@@ -6,7 +6,7 @@
 /*   By: sohechai <sohechai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/17 16:33:00 by sohechai          #+#    #+#             */
-/*   Updated: 2021/03/17 21:54:04 by sohechai         ###   ########lyon.fr   */
+/*   Updated: 2021/03/29 15:22:08 by sohechai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,11 @@ ZombieHorde::ZombieHorde(int n) : _n(n)
 
 	i = 0;
 	time = 0;
+	if (n < 0)
+	{
+		std::cout << "Error, negative number for horde .." << std::endl;
+		return ;
+	}
 	this->_zombie = new	Zombie[n];
 	while (i < n)
 	{
@@ -37,8 +42,11 @@ ZombieHorde::ZombieHorde()
 
 ZombieHorde::~ZombieHorde()
 {
-	delete	[]_zombie;
-	std::cout << std::endl << "All zombies are dead , Thank you ! ;)" << std::endl;
+	if (this->_n > 0)
+	{
+		delete	[]_zombie;
+		std::cout << std::endl << "All zombies are dead , Thank you ! ;)" << std::endl;
+	}
 	return ;
 }
 

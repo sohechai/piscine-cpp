@@ -6,7 +6,7 @@
 /*   By: sohechai <sohechai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 23:52:18 by sohechai          #+#    #+#             */
-/*   Updated: 2021/03/20 22:41:17 by sohechai         ###   ########lyon.fr   */
+/*   Updated: 2021/03/29 15:23:35 by sohechai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ void			ft_replace(std::string file, std::string s1, std::string s2)
 		str.replace(found, s1len, s2);
 		pos = (size_t)found + s2len;
 	}
-	std::ofstream	ofs("FILENAME.replace");
+	std::ofstream	ofs(file + ".replace");
 	ofs << str;
 	ofs.close();
 	return ;
@@ -62,6 +62,11 @@ int		main(int argc, char **argv)
 		std::string file = argv[1];
 		std::string s1 = argv[2];
 		std::string s2 = argv[3];
+		if (s1[0] == '\0' || s2[0] == '\0')
+		{
+			std::cout << "Error, empty strings ..";
+			return (0);
+		}
 		ft_replace(file, s1, s2);
 	}
 	return (0);
