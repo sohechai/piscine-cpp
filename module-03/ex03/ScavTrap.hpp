@@ -1,39 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ZombieHorde.hpp                                    :+:      :+:    :+:   */
+/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sohechai <sohechai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/17 16:33:02 by sohechai          #+#    #+#             */
-/*   Updated: 2021/03/29 15:55:58 by sohechai         ###   ########lyon.fr   */
+/*   Created: 2021/03/29 12:53:31 by sohechai          #+#    #+#             */
+/*   Updated: 2021/03/29 16:18:51 by sohechai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ZOMBIEHORDE_HPP
-# define ZOMBIEHORDE_HPP
+#ifndef SCAVTRAP_HPP
+# define SCAVTRAP_HPP
+# include "ClapTrap.hpp"
 # include <iostream>
-# include <sstream>
-# include <iomanip>
-# include <cstring>
-# include <string>
 # include <unistd.h>
-# include "Zombie.hpp"
 
-class		ZombieHorde
+class		ScavTrap : public ClapTrap
 {
 	public:
 
-	ZombieHorde();
-	ZombieHorde(int);
-	~ZombieHorde();
+	ScavTrap(std::string);
+	~ScavTrap(void);
 
-	void			announce();
+	void				challengeNewcomer();
 
 	private:
 
-	Zombie			*_zombie;
-	int				_n;
+	std::string			_Name;
+	unsigned int		_EnergyPoints;
+	unsigned int		_MaxEnergyPoints;
+	unsigned int		_MeleeAttackDamage;
+	unsigned int		_RangedAttackDamage;
+	const unsigned int	_ArmorDamageReduction;
+
 };
 
 #endif

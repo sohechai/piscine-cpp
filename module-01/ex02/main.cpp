@@ -6,7 +6,7 @@
 /*   By: sohechai <sohechai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/16 16:26:30 by sohechai          #+#    #+#             */
-/*   Updated: 2021/03/17 21:56:45 by sohechai         ###   ########lyon.fr   */
+/*   Updated: 2021/03/29 15:53:49 by sohechai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,13 +23,13 @@ int		main(void)
 
 	zombieEvent.setZombieType("Carnivor");
 	zombie1 = zombieEvent.randomChump();
-	zombie1->advert();
+	zombie1->announce();
 
 	usleep(1000000);
 
 	zombieEvent.setZombieType("Herbivor");
 	zombie2 = zombieEvent.randomChump();
-	zombie2->advert();
+	zombie2->announce();
 
 	delete	zombie1;
 	delete	zombie2;

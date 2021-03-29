@@ -6,7 +6,7 @@
 /*   By: sohechai <sohechai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/28 13:35:36 by sohechai          #+#    #+#             */
-/*   Updated: 2021/03/28 16:44:35 by sohechai         ###   ########lyon.fr   */
+/*   Updated: 2021/03/29 13:25:41 by sohechai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,30 +14,31 @@
 
 int		main(void)
 {
-	FragTrap	sofia("Sofia");
+	FragTrap	Jhon("Jhon");
 	std::string monster = "final boss";
 
-	sofia.displayCharacter();
+	Jhon.displayCharacter();
 
-	sofia.meleeAttack(monster);
+	Jhon.meleeAttack(monster);
 
-	sofia.takeDamage(30);
+	Jhon.takeDamage(30);
 
-	sofia.rangedAttack(monster);
-	sofia.beRepaired(25);
+	Jhon.rangedAttack(monster);
+	Jhon.beRepaired(25);
 
-	sofia.rangedAttack(monster);
-	sofia.beRepaired(25);
+	Jhon.rangedAttack(monster);
+	Jhon.beRepaired(25);
 
-	sofia.takeDamage(410);
+	Jhon.takeDamage(40);
 
-	sofia.vaulthunter_dot_exe(monster);
+	Jhon.vaulthunter_dot_exe(monster);
 	usleep(1000000);
-	sofia.vaulthunter_dot_exe(monster);
+	Jhon.vaulthunter_dot_exe(monster);
 	usleep(1000000);
-	sofia.vaulthunter_dot_exe(monster);
+	Jhon.vaulthunter_dot_exe(monster);
 	usleep(1000000);
 
-	sofia.displayCharacter();
+	Jhon.displayCharacter();
+
 	return (0);
 }

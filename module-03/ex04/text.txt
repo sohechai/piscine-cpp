@@ -1,0 +1,1 @@
+copier ninjatrap.cpp et .hpp

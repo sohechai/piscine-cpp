@@ -1,39 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ZombieHorde.hpp                                    :+:      :+:    :+:   */
+/*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sohechai <sohechai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/17 16:33:02 by sohechai          #+#    #+#             */
-/*   Updated: 2021/03/29 15:55:58 by sohechai         ###   ########lyon.fr   */
+/*   Created: 2021/03/28 13:35:33 by sohechai          #+#    #+#             */
+/*   Updated: 2021/03/29 18:27:50 by sohechai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ZOMBIEHORDE_HPP
-# define ZOMBIEHORDE_HPP
+#ifndef FRAGTRAP_HPP
+# define FRAGTRAP_HPP
+# include "ClapTrap.hpp"
 # include <iostream>
-# include <sstream>
-# include <iomanip>
-# include <cstring>
-# include <string>
 # include <unistd.h>
-# include "Zombie.hpp"
 
-class		ZombieHorde
+class		FragTrap : public ClapTrap
 {
 	public:
 
-	ZombieHorde();
-	ZombieHorde(int);
-	~ZombieHorde();
+	FragTrap(std::string name);
+	virtual ~FragTrap(void);
 
-	void			announce();
+	void				vaulthunter_dot_exe(std::string const &target);
 
 	private:
 
-	Zombie			*_zombie;
-	int				_n;
+	std::string			_Name;
+	unsigned int		_EnergyPoints;
+	unsigned int		_MaxEnergyPoints;
+	unsigned int		_MeleeAttackDamage;
+	unsigned int		_RangedAttackDamage;
+	const unsigned int	_ArmorDamageReduction;
+
 };
 
 #endif

@@ -1,45 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
+/*   SuperTrap.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sohechai <sohechai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/29 12:53:31 by sohechai          #+#    #+#             */
-/*   Updated: 2021/03/29 13:28:07 by sohechai         ###   ########lyon.fr   */
+/*   Created: 2021/03/29 18:30:47 by sohechai          #+#    #+#             */
+/*   Updated: 2021/03/29 18:46:55 by sohechai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SCAVTRAP_HPP
-# define SCAVTRAP_HPP
+#ifndef SUPERTRAP_HPP
+# define SUPERTRAP_HPP
+# include "FragTrap.hpp"
+# include "NinjaTrap.hpp"
 # include <iostream>
 # include <unistd.h>
 
-class		ScavTrap
+class		SuperTrap : public ClapTrap
 {
 	public:
 
-	ScavTrap(std::string);
-	~ScavTrap(void);
+    SuperTrap(void);
+	SuperTrap(std::string);
+	~SuperTrap(void);
 
-	void				rangedAttack(std::string const &target);
-	void				meleeAttack(std::string const &target);
-	void				takeDamage(unsigned int amount);
-	void				beRepaired(unsigned int amount);
 	void				challengeNewcomer();
-	void				displayCharacter();
 
 	private:
 
+	std::string			_Name;
 	int					_HitPoints;
 	unsigned int		_MaxHitPoints;
 	unsigned int		_EnergyPoints;
 	unsigned int		_MaxEnergyPoints;
 	unsigned int		_Level;
-	std::string			_Name;
 	unsigned int		_MeleeAttackDamage;
 	unsigned int		_RangedAttackDamage;
-	const unsigned int	_ArmorDamageReduction;
+	unsigned int		_ArmorDamageReduction;
 
 };
 

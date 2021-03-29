@@ -6,12 +6,13 @@
 /*   By: sohechai <sohechai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/29 12:52:45 by sohechai          #+#    #+#             */
-/*   Updated: 2021/03/29 13:28:28 by sohechai         ###   ########lyon.fr   */
+/*   Updated: 2021/03/29 16:43:20 by sohechai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScavTrap.hpp"
 #include "FragTrap.hpp"
+#include "ClapTrap.hpp"
 
 int		main(void)
 {

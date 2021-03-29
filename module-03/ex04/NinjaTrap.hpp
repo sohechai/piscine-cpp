@@ -1,39 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ZombieHorde.hpp                                    :+:      :+:    :+:   */
+/*   NinjaTrap.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sohechai <sohechai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/17 16:33:02 by sohechai          #+#    #+#             */
-/*   Updated: 2021/03/29 15:55:58 by sohechai         ###   ########lyon.fr   */
+/*   Created: 2021/03/29 17:45:51 by sohechai          #+#    #+#             */
+/*   Updated: 2021/03/29 18:20:43 by sohechai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ZOMBIEHORDE_HPP
-# define ZOMBIEHORDE_HPP
+#ifndef NINJATRAP_HPP
+# define NINJATRAP_HPP
+# include "ClapTrap.hpp"
 # include <iostream>
-# include <sstream>
-# include <iomanip>
-# include <cstring>
-# include <string>
 # include <unistd.h>
-# include "Zombie.hpp"
 
-class		ZombieHorde
+class		NinjaTrap : public ClapTrap
 {
 	public:
 
-	ZombieHorde();
-	ZombieHorde(int);
-	~ZombieHorde();
+	NinjaTrap(std::string name);
+	virtual ~NinjaTrap(void);
 
-	void			announce();
+	void				ninjaShoebox(std::string const &target);
 
 	private:
 
-	Zombie			*_zombie;
-	int				_n;
+	std::string			_Name;
+    int					_HitPoints;
+	unsigned int		_MaxHitPoints;
+	unsigned int		_EnergyPoints;
+	unsigned int		_MaxEnergyPoints;
+	unsigned int		_MeleeAttackDamage;
+	unsigned int		_RangedAttackDamage;
+	const unsigned int	_ArmorDamageReduction;
+
 };
 
 #endif

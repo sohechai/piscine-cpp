@@ -6,7 +6,7 @@
 /*   By: sohechai <sohechai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/17 16:33:00 by sohechai          #+#    #+#             */
-/*   Updated: 2021/03/29 15:22:08 by sohechai         ###   ########lyon.fr   */
+/*   Updated: 2021/03/29 15:55:58 by sohechai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ void			ZombieHorde::announce()
 	i = 0;
 	while (i < this->_n)
 	{
-		this->_zombie[i].advert();
+		this->_zombie[i].announce();
 		i++;
 	}
 }

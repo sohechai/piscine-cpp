@@ -6,7 +6,7 @@
 /*   By: sohechai <sohechai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/16 16:26:28 by sohechai          #+#    #+#             */
-/*   Updated: 2021/03/17 21:04:27 by sohechai         ###   ########lyon.fr   */
+/*   Updated: 2021/03/29 15:51:22 by sohechai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ Zombie::~Zombie(void)
 	return ;
 }
 
-void	Zombie::advert()
+void	Zombie::announce()
 {
 	std::cout << "\033[32m<" << this->_name << " (" << this->_type << ")> Braiiiiiiinnnssss ...\033[0m" << std::endl;
 	std::cout << "New zombie " << this->_name << " is up ! :o" << std::endl;
