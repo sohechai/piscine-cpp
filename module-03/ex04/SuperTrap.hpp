@@ -6,7 +6,7 @@
 /*   By: sohechai <sohechai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/29 18:30:47 by sohechai          #+#    #+#             */
-/*   Updated: 2021/03/29 18:46:55 by sohechai         ###   ########lyon.fr   */
+/*   Updated: 2021/03/29 18:50:08 by sohechai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,9 @@
 # include <iostream>
 # include <unistd.h>
 
-class		SuperTrap : public ClapTrap
+// http://www.bruno-garcia.net/www/Cours/heritage.html#constructionDestruction
+
+class		SuperTrap : public FragTrap, public NinjaTrap
 {
 	public:
 
