@@ -6,20 +6,13 @@
 /*   By: sohechai <sohechai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/28 13:35:31 by sohechai          #+#    #+#             */
-/*   Updated: 2021/03/29 17:43:00 by sohechai         ###   ########lyon.fr   */
+/*   Updated: 2021/03/30 10:40:01 by sohechai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "FragTrap.hpp"
 
-FragTrap::FragTrap(std::string name) :
-									ClapTrap(name),
-									_Name(name),
-									_EnergyPoints(100),
-									_MaxEnergyPoints(100),
-									_MeleeAttackDamage(30),
-									_RangedAttackDamage(20),
-									_ArmorDamageReduction(5)
+FragTrap::FragTrap(std::string name) : ClapTrap(name, 100, 100, 100, 100, 1, 30, 20, 5)
 {
 	std::cout << "\033[1;33mFR4G-TP Hey everybody! Check out my package!\033[00m" << std::endl;
 	return ;
@@ -28,6 +21,24 @@ FragTrap::FragTrap(std::string name) :
 FragTrap::~FragTrap(void)
 {
 	std::cout << "\033[1;33mFR4G-TP I'M DEAD I'M DEAD OHMYGOD I'M DEAD!\033[00m" << std::endl;
+
+	return ;
+}
+
+void			FragTrap::rangedAttack(std::string const &target)
+{
+	std::cout << std::endl << "\033[33mFR4G-TP \033[00m" << this->_Name << " \033[31mattacks \033[00m" <<
+	target << " at range, causing " << this->_RangedAttackDamage <<
+	" points of damage!" << std::endl;
+
+	return ;
+}
+
+void			FragTrap::meleeAttack(std::string const &target)
+{
+	std::cout << std::endl << "\033[33mFR4G-TP \033[00m" << this->_Name << " \033[31mattacks \033[00m" << target <<
+	" at melee, causing " << this->_MeleeAttackDamage <<
+	" points of damage!" << std::endl;
 
 	return ;
 }

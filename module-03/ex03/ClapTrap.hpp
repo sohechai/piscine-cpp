@@ -6,7 +6,7 @@
 /*   By: sohechai <sohechai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/29 13:32:42 by sohechai          #+#    #+#             */
-/*   Updated: 2021/03/29 18:17:42 by sohechai         ###   ########lyon.fr   */
+/*   Updated: 2021/03/30 15:42:19 by sohechai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,18 @@ class		ClapTrap
 {
 	public:
 
-	ClapTrap(std::string name);
-	virtual ~ClapTrap(void);
+	ClapTrap(std::string name, 
+			int HitPoints,
+			unsigned int MaxHitPoints,
+			unsigned int EnergyPoints,
+			unsigned int MaxEnergyPoints,
+			unsigned int Level,
+			unsigned int MeleeAttackDamage,
+			unsigned int RangedAttackDamage,
+			unsigned int ArmorDamageReduction);
+	~ClapTrap(void);
 
-	void				rangedAttack(std::string const &target) const;
-	void				meleeAttack(std::string const &target);
+	std::string			getName();
 	void				takeDamage(unsigned int amount);
 	void				beRepaired(unsigned int amount);
 	void				displayCharacter();

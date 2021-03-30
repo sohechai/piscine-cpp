@@ -6,13 +6,15 @@
 /*   By: sohechai <sohechai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/29 17:45:51 by sohechai          #+#    #+#             */
-/*   Updated: 2021/03/29 18:20:43 by sohechai         ###   ########lyon.fr   */
+/*   Updated: 2021/03/30 14:01:29 by sohechai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef NINJATRAP_HPP
 # define NINJATRAP_HPP
 # include "ClapTrap.hpp"
+# include "FragTrap.hpp"
+# include "ScavTrap.hpp"
 # include <iostream>
 # include <unistd.h>
 
@@ -21,20 +23,14 @@ class		NinjaTrap : public ClapTrap
 	public:
 
 	NinjaTrap(std::string name);
-	virtual ~NinjaTrap(void);
+	~NinjaTrap(void);
 
-	void				ninjaShoebox(std::string const &target);
-
-	private:
-
-	std::string			_Name;
-    int					_HitPoints;
-	unsigned int		_MaxHitPoints;
-	unsigned int		_EnergyPoints;
-	unsigned int		_MaxEnergyPoints;
-	unsigned int		_MeleeAttackDamage;
-	unsigned int		_RangedAttackDamage;
-	const unsigned int	_ArmorDamageReduction;
+	void				rangedAttack(std::string const &target);
+	void				meleeAttack(std::string const &target);
+	void				ninjaShoebox(NinjaTrap const &target);
+	void				ninjaShoebox(ClapTrap &target);
+	void				ninjaShoebox(FragTrap &target);
+	void				ninjaShoebox(ScavTrap &target);
 
 };
 

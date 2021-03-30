@@ -6,7 +6,7 @@
 /*   By: sohechai <sohechai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/28 13:35:33 by sohechai          #+#    #+#             */
-/*   Updated: 2021/03/29 17:42:28 by sohechai         ###   ########lyon.fr   */
+/*   Updated: 2021/03/30 10:41:58 by sohechai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,16 +23,9 @@ class		FragTrap : public ClapTrap
 	FragTrap(std::string name);
 	~FragTrap(void);
 
+	void				rangedAttack(std::string const &target);
+	void				meleeAttack(std::string const &target);
 	void				vaulthunter_dot_exe(std::string const &target);
-
-	private:
-
-	std::string			_Name;
-	unsigned int		_EnergyPoints;
-	unsigned int		_MaxEnergyPoints;
-	unsigned int		_MeleeAttackDamage;
-	unsigned int		_RangedAttackDamage;
-	const unsigned int	_ArmorDamageReduction;
 
 };
 

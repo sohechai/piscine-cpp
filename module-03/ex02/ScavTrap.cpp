@@ -6,19 +6,13 @@
 /*   By: sohechai <sohechai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/29 12:54:31 by sohechai          #+#    #+#             */
-/*   Updated: 2021/03/29 16:36:40 by sohechai         ###   ########lyon.fr   */
+/*   Updated: 2021/03/30 10:41:09 by sohechai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScavTrap.hpp"
 
-ScavTrap::ScavTrap(std::string name) : ClapTrap(name),
-									_Name(name),
-									_EnergyPoints(50),
-									_MaxEnergyPoints(50),
-									_MeleeAttackDamage(20),
-									_RangedAttackDamage(15),
-									_ArmorDamageReduction(3)
+ScavTrap::ScavTrap(std::string name) : ClapTrap(name, 100, 100, 50, 50, 1, 20, 15, 3)
 {
 	std::cout << "\033[1;33mSCAV-TP You versus me! Me versus you! Either way!\033[00m" << std::endl;
 	return ;
@@ -27,6 +21,24 @@ ScavTrap::ScavTrap(std::string name) : ClapTrap(name),
 ScavTrap::~ScavTrap(void)
 {
 	std::cout << std::endl << "\033[1;33mSCAV-TP NOOO!\033[00m" << std::endl;
+	return ;
+}
+
+void			ScavTrap::rangedAttack(std::string const &target)
+{
+	std::cout << std::endl << "\033[33mSC4V-TP \033[00m" << this->_Name << " \033[31mattacks \033[00m" <<
+	target << " at range, causing " << this->_RangedAttackDamage <<
+	" points of damage!" << std::endl;
+
+	return ;
+}
+
+void			ScavTrap::meleeAttack(std::string const &target)
+{
+	std::cout << std::endl << "\033[33mSC4V-TP \033[00m" << this->_Name << " \033[31mattacks \033[00m" << target <<
+	" at melee, causing " << this->_MeleeAttackDamage <<
+	" points of damage!" << std::endl;
+
 	return ;
 }
 

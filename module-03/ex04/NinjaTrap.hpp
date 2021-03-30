@@ -6,7 +6,7 @@
 /*   By: sohechai <sohechai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/29 17:45:51 by sohechai          #+#    #+#             */
-/*   Updated: 2021/03/29 18:20:43 by sohechai         ###   ########lyon.fr   */
+/*   Updated: 2021/03/30 16:40:36 by sohechai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 # include <iostream>
 # include <unistd.h>
 
-class		NinjaTrap : public ClapTrap
+class		NinjaTrap : virtual public ClapTrap
 {
 	public:
 

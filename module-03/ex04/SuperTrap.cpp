@@ -6,7 +6,7 @@
 /*   By: sohechai <sohechai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/29 18:30:45 by sohechai          #+#    #+#             */
-/*   Updated: 2021/03/29 18:46:55 by sohechai         ###   ########lyon.fr   */
+/*   Updated: 2021/03/30 18:31:56 by sohechai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,16 +17,19 @@ SuperTrap::~SuperTrap(void)
     return ;
 }
 
-SuperTrap::SuperTrap(std::string name) :
-                            ClapTrap(name),
-                            _HitPoints(0),
-                            _MaxHitPoints(0),
-                            _EnergyPoints(1),
-                            _MaxEnergyPoints(1),
-                            _Level(1),
-                            _MeleeAttackDamage(1),
-                            _RangedAttackDamage(0),
-                            _ArmorDamageReduction(0),
+SuperTrap::SuperTrap(std::string name, 
+                    int HitPoints,
+                    unsigned int MaxHitPoints,
+                    unsigned int EnergyPoints,
+                    unsigned int MaxEnergyPoints,
+                    unsigned int Level,
+                    unsigned int MeleeAttackDamage,
+                    unsigned int RangedAttackDamage,
+                    unsigned int ArmorDamageReduction) :
+                    _Name(name),
+                    FragTrap(_HitPoints, _MaxHitPoints, _RangedAttackDamage, ArmorDamageReduction),
+                    NinjaTrap(_EnergyPoints, _MaxEnergyPoints, _MeleeAttackDamage)
+                            
 {
     std::cout << "constructor of super trap called" << std::endl;
 
