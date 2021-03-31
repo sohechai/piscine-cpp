@@ -6,14 +6,16 @@
 /*   By: sohechai <sohechai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/29 18:30:47 by sohechai          #+#    #+#             */
-/*   Updated: 2021/03/30 16:55:07 by sohechai         ###   ########lyon.fr   */
+/*   Updated: 2021/03/31 18:44:10 by sohechai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SUPERTRAP_HPP
 # define SUPERTRAP_HPP
+# include "ClapTrap.hpp"
 # include "FragTrap.hpp"
 # include "NinjaTrap.hpp"
+# include "SuperTrap.hpp"
 # include <iostream>
 # include <unistd.h>
 
@@ -25,30 +27,23 @@ class		SuperTrap : public FragTrap, public NinjaTrap
 	public:
 
     SuperTrap(void);
-	SuperTrap(std::string name, 
-				int HitPoints,
-				unsigned int MaxHitPoints,
-				unsigned int EnergyPoints,
-				unsigned int MaxEnergyPoints,
-				unsigned int Level,
-				unsigned int MeleeAttackDamage,
-				unsigned int RangedAttackDamage,
-				unsigned int ArmorDamageReduction);
+	SuperTrap(std::string name);
 	~SuperTrap(void);
 
-	void				challengeNewcomer();
+	void				rangedAttack(std::string const &target);
+	void				meleeAttack(std::string const &target);
 
 	private:
 
 	std::string			_Name;
-	// int					_HitPoints;
-	// unsigned int		_MaxHitPoints;
-	// unsigned int		_EnergyPoints;
-	// unsigned int		_MaxEnergyPoints;
+	int					_HitPoints;
+	unsigned int		_MaxHitPoints;
+	unsigned int		_EnergyPoints;
+	unsigned int		_MaxEnergyPoints;
 	unsigned int		_Level;
-	// unsigned int		_MeleeAttackDamage;
-	// unsigned int		_RangedAttackDamage;
-	// unsigned int		_ArmorDamageReduction;
+	unsigned int		_MeleeAttackDamage;
+	unsigned int		_RangedAttackDamage;
+	unsigned int		_ArmorDamageReduction;
 
 };
 

@@ -6,7 +6,7 @@
 /*   By: sohechai <sohechai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/29 12:54:31 by sohechai          #+#    #+#             */
-/*   Updated: 2021/03/29 15:46:00 by sohechai         ###   ########lyon.fr   */
+/*   Updated: 2021/03/31 12:05:02 by sohechai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,8 @@ ScavTrap::~ScavTrap(void)
 
 void			ScavTrap::displayCharacter()
 {
-	std::cout << std::endl << "\033[33mSCAV-TP \033[00mI must be a rogue, 'cause there are so many skills! Uhh " << this->_Name << std::endl;
+	std::cout << std::endl;
+	std::cout << "\033[34mSC4V-TP Quick checkup " << this->_Name << " !" << std::endl;
 	std::cout << "HP : " << this->_HitPoints << std::endl;
 	std::cout << "Energy Points : " << this->_EnergyPoints << std::endl;
 	std::cout << "You can't have more than : " << this->_MaxEnergyPoints << std::endl;

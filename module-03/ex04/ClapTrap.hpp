@@ -6,7 +6,7 @@
 /*   By: sohechai <sohechai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/29 13:32:42 by sohechai          #+#    #+#             */
-/*   Updated: 2021/03/30 10:44:28 by sohechai         ###   ########lyon.fr   */
+/*   Updated: 2021/03/31 18:37:46 by sohechai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ class		ClapTrap
 {
 	public:
 
+	ClapTrap(void);
 	ClapTrap(std::string name, 
 			int HitPoints,
 			unsigned int MaxHitPoints,
@@ -30,6 +31,8 @@ class		ClapTrap
 			unsigned int ArmorDamageReduction);
 	~ClapTrap(void);
 
+	std::string			getName();
+	unsigned int		getEnergyPoint();
 	void				takeDamage(unsigned int amount);
 	void				beRepaired(unsigned int amount);
 	void				displayCharacter();

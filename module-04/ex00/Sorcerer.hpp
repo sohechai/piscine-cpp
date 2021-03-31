@@ -1,32 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   FragTrap.hpp                                       :+:      :+:    :+:   */
+/*   Sorcerer.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sohechai <sohechai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/28 13:35:33 by sohechai          #+#    #+#             */
-/*   Updated: 2021/03/31 18:18:43 by sohechai         ###   ########lyon.fr   */
+/*   Created: 2021/03/31 10:18:00 by sohechai          #+#    #+#             */
+/*   Updated: 2021/03/31 10:55:23 by sohechai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FRAGTRAP_HPP
-# define FRAGTRAP_HPP
-# include "ClapTrap.hpp"
+#ifndef SORCERER_HPP
+# define SORCERER_HPP
 # include <iostream>
 # include <unistd.h>
 
-class		FragTrap : virtual public ClapTrap
+class		Sorcerer
 {
 	public:
 
-	FragTrap(void);
-	FragTrap(std::string name);
-	~FragTrap(void);
+	Sorcerer();
+	Sorcerer(std::string name, std::string type);
+	~Sorcerer();
 
-	void				rangedAttack(std::string const &target);
-	void				meleeAttack(std::string const &target);
-	void				vaulthunter_dot_exe(std::string const &target);
+	Sorcerer&     operator=(Sorcerer const &rhs);
+
+	private:
+
+	std::string			_Name;
+	std::string			_Type;
 
 };
 

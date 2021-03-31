@@ -6,11 +6,16 @@
 /*   By: sohechai <sohechai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/29 13:32:40 by sohechai          #+#    #+#             */
-/*   Updated: 2021/03/30 10:58:14 by sohechai         ###   ########lyon.fr   */
+/*   Updated: 2021/03/31 18:38:57 by sohechai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
+
+ClapTrap::ClapTrap(void)
+{
+	return ;
+}
 
 ClapTrap::ClapTrap(std::string Name, 
 					int HitPoints,
@@ -41,9 +46,20 @@ ClapTrap::~ClapTrap(void)
 	return ;
 }
 
-void			ClapTrap::displayCharacter()
+std::string			ClapTrap::getName()
 {
-	std::cout << "          I must be a rogue, 'cause there are so many skills! Uhh " << this->_Name << std::endl;
+	return(this->_Name);
+}
+
+unsigned int		ClapTrap::getEnergyPoint()
+{
+	return(this->_EnergyPoints);
+}
+
+void				ClapTrap::displayCharacter()
+{
+	std::cout << std::endl;
+	std::cout << "\033[34mCL4P-TP Quick checkup " << this->_Name << " !" << std::endl;
 	std::cout << "HP : " << this->_HitPoints << std::endl;
 	std::cout << "Energy Points : " << this->ClapTrap::_EnergyPoints << std::endl;
 	std::cout << "You can't have more than : " << this->_MaxEnergyPoints << std::endl;
@@ -51,7 +67,7 @@ void			ClapTrap::displayCharacter()
 	std::cout << "Armor Damage Reduction : " << this->_ArmorDamageReduction << std::endl << std::endl;
 }
 
-void			ClapTrap::takeDamage(unsigned int amount)
+void				ClapTrap::takeDamage(unsigned int amount)
 {
 	if ((this->_HitPoints - ((int)amount - (int)this->_ArmorDamageReduction)) < 0)
 	{
@@ -68,7 +84,7 @@ void			ClapTrap::takeDamage(unsigned int amount)
 	return ;
 }
 
-void			ClapTrap::beRepaired(unsigned int amount)
+void				ClapTrap::beRepaired(unsigned int amount)
 {
 	if ((amount + this->_HitPoints) > this->_MaxHitPoints)
 		this->_HitPoints = this->_MaxHitPoints;

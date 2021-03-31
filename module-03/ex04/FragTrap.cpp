@@ -6,11 +6,16 @@
 /*   By: sohechai <sohechai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/28 13:35:31 by sohechai          #+#    #+#             */
-/*   Updated: 2021/03/30 10:40:01 by sohechai         ###   ########lyon.fr   */
+/*   Updated: 2021/03/31 18:39:21 by sohechai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "FragTrap.hpp"
+
+FragTrap::FragTrap(void)
+{
+	return ;
+}
 
 FragTrap::FragTrap(std::string name) : ClapTrap(name, 100, 100, 100, 100, 1, 30, 20, 5)
 {

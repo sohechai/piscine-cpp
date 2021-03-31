@@ -6,7 +6,7 @@
 /*   By: sohechai <sohechai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/29 12:52:45 by sohechai          #+#    #+#             */
-/*   Updated: 2021/03/30 15:48:31 by sohechai         ###   ########lyon.fr   */
+/*   Updated: 2021/03/31 18:02:45 by sohechai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,12 @@ int		main(void)
 {
 	FragTrap	john("John");
 	ScavTrap	sofia("Sofia");
-	NinjaTrap	ninja("ninja");
-	std::string monster = "final boss";
+	NinjaTrap	shikamaru("Shikamaru");
+	std::string monster = "Final boss";
 
-	ninja.ninjaShoebox(john);
-	ninja.ninjaShoebox(sofia);
-	ninja.ninjaShoebox(ninja);
+	shikamaru.ninjaShoebox(john);
+	shikamaru.ninjaShoebox(sofia);
+	shikamaru.ninjaShoebox(shikamaru);
 
 	std::cout << std::endl;
 
@@ -45,11 +45,10 @@ int		main(void)
 	john.displayCharacter();
 
 	sofia.challengeNewcomer();
-	usleep(1000000);
+
 	sofia.challengeNewcomer();
-	usleep(1000000);
+
 	sofia.challengeNewcomer();
-	usleep(1000000);
 
 	return (0);
 }

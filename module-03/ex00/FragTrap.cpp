@@ -6,7 +6,7 @@
 /*   By: sohechai <sohechai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/28 13:35:31 by sohechai          #+#    #+#             */
-/*   Updated: 2021/03/28 16:50:00 by sohechai         ###   ########lyon.fr   */
+/*   Updated: 2021/03/31 11:29:50 by sohechai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,12 +35,13 @@ FragTrap::~FragTrap(void)
 
 void			FragTrap::displayCharacter()
 {
-	std::cout << std::endl << "\033[33mFR4G-TP \033[00mI must be a rogue, 'cause there are so many skills! Uhh " << this->_Name << std::endl;
+	std::cout << std::endl;
+	std::cout << "\033[34mFR4G-TP Quick checkup " << this->_Name << " !" << std::endl;
 	std::cout << "HP : " << this->_HitPoints << std::endl;
 	std::cout << "Energy Points : " << this->_EnergyPoints << std::endl;
 	std::cout << "You can't have more than : " << this->_MaxEnergyPoints << std::endl;
 	std::cout << "Level : " << this->_Level << std::endl;
-	std::cout << "Armor Damage Reduction : " << this->_ArmorDamageReduction << std::endl << std::endl;
+	std::cout << "Armor Damage Reduction : " << this->_ArmorDamageReduction << "\033[00m" << std::endl << std::endl;
 }
 
 void			FragTrap::rangedAttack(std::string const &target)

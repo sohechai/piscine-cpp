@@ -1,33 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   FragTrap.hpp                                       :+:      :+:    :+:   */
+/*   Sorcerer.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sohechai <sohechai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/28 13:35:33 by sohechai          #+#    #+#             */
-/*   Updated: 2021/03/31 18:18:43 by sohechai         ###   ########lyon.fr   */
+/*   Created: 2021/03/31 10:33:46 by sohechai          #+#    #+#             */
+/*   Updated: 2021/03/31 11:01:48 by sohechai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FRAGTRAP_HPP
-# define FRAGTRAP_HPP
-# include "ClapTrap.hpp"
-# include <iostream>
-# include <unistd.h>
+#include "Sorcerer.hpp"
 
-class		FragTrap : virtual public ClapTrap
+Sorcerer::Sorcerer()
 {
-	public:
+    return ;
+}
 
-	FragTrap(void);
-	FragTrap(std::string name);
-	~FragTrap(void);
+Sorcerer::Sorcerer(std::string name, std::string type) : _Name(name), _Type(type)
+{
+    std::cout << this->_Name << ", " << this->_Type << ", is born!" << std::endl;
 
-	void				rangedAttack(std::string const &target);
-	void				meleeAttack(std::string const &target);
-	void				vaulthunter_dot_exe(std::string const &target);
+    return ;
+}
 
-};
+Sorcerer::~Sorcerer()
+{
+    return ;
+}
 
-#endif
+Sorcerer&     Sorcerer::operator=(Sorcerer const &rhs)
+{
+    this->_Name = ;
+    this->_Type = ;
+}

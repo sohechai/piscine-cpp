@@ -6,7 +6,7 @@
 /*   By: sohechai <sohechai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/29 17:45:45 by sohechai          #+#    #+#             */
-/*   Updated: 2021/03/30 15:47:47 by sohechai         ###   ########lyon.fr   */
+/*   Updated: 2021/03/31 18:01:52 by sohechai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,28 +47,28 @@ void			NinjaTrap::meleeAttack(std::string const &target)
 
 void				NinjaTrap::ninjaShoebox(NinjaTrap const &target)
 {
-    std::cout << "Be careful ! I am The Ninja Trap" << target._Name << std::endl;
+    std::cout << "\033[33mNINJ4-TP \033[00mOh that's me .. " << target._Name << std::endl;
 
     return ; 
 }
 
 void				NinjaTrap::ninjaShoebox(ClapTrap &target)
 {
-    std::cout << "Hey, " << target.getName() << " hey, Clap Trap ! I'm Ninja Trap" << std::endl;
+    std::cout << "\033[33mNINJ4-TP \033[00mHey, " << target.getName() << " hey, Clap Trap ! I'm Ninja Trap" << std::endl;
 
     return ; 
 }
 
 void				NinjaTrap::ninjaShoebox(FragTrap &target)
 {
-    std::cout << "Hey, " << target.getName() << " hey, Frag Trap ! I'm Ninja Trap" << std::endl;
+    std::cout << "\033[33mNINJ4-TP \033[00mHey, " << target.getName() << " hey, Frag Trap ! I'm Ninja Trap" << std::endl;
 
     return ; 
 }
 
 void				NinjaTrap::ninjaShoebox(ScavTrap &target)
 {
-    std::cout << "Hey, " << target.getName() << " hey, Scav Trap ! I'm Ninja Trap" << std::endl;
+    std::cout << "\033[33mNINJ4-TP \033[00mHey, " << target.getName()  << " ! " << target.getEnergyPoint() << " Energy Points left ;)" << std::endl;
 
     return ; 
 }

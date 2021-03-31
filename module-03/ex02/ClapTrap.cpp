@@ -6,7 +6,7 @@
 /*   By: sohechai <sohechai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/29 13:32:40 by sohechai          #+#    #+#             */
-/*   Updated: 2021/03/30 10:58:14 by sohechai         ###   ########lyon.fr   */
+/*   Updated: 2021/03/31 12:05:26 by sohechai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,8 @@ ClapTrap::~ClapTrap(void)
 
 void			ClapTrap::displayCharacter()
 {
-	std::cout << "          I must be a rogue, 'cause there are so many skills! Uhh " << this->_Name << std::endl;
+	std::cout << std::endl;
+	std::cout << "\033[34mCL4P-TP Quick checkup " << this->_Name << " !" << std::endl;
 	std::cout << "HP : " << this->_HitPoints << std::endl;
 	std::cout << "Energy Points : " << this->ClapTrap::_EnergyPoints << std::endl;
 	std::cout << "You can't have more than : " << this->_MaxEnergyPoints << std::endl;

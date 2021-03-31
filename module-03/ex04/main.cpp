@@ -6,18 +6,20 @@
 /*   By: sohechai <sohechai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/29 12:52:45 by sohechai          #+#    #+#             */
-/*   Updated: 2021/03/29 16:43:20 by sohechai         ###   ########lyon.fr   */
+/*   Updated: 2021/03/31 18:31:45 by sohechai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScavTrap.hpp"
 #include "FragTrap.hpp"
 #include "ClapTrap.hpp"
+#include "SuperTrap.hpp"
 
 int		main(void)
 {
 	FragTrap	john("John");
 	ScavTrap	sofia("Sofia");
+	SuperTrap	super("Super");
 	std::string monster = "final boss";
 
 	john.displayCharacter();
@@ -37,11 +39,11 @@ int		main(void)
 	john.displayCharacter();
 
 	sofia.challengeNewcomer();
-	usleep(1000000);
 	sofia.challengeNewcomer();
-	usleep(1000000);
 	sofia.challengeNewcomer();
-	usleep(1000000);
+
+	super.meleeAttack(monster);
+	super.rangedAttack(monster);
 
 	return (0);
 }

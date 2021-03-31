@@ -6,7 +6,7 @@
 /*   By: sohechai <sohechai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/29 13:32:40 by sohechai          #+#    #+#             */
-/*   Updated: 2021/03/30 15:42:59 by sohechai         ###   ########lyon.fr   */
+/*   Updated: 2021/03/31 16:14:00 by sohechai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,9 +46,15 @@ std::string			ClapTrap::getName()
 	return(this->_Name);
 }
 
-void			ClapTrap::displayCharacter()
+unsigned int		ClapTrap::getEnergyPoint()
 {
-	std::cout << "          I must be a rogue, 'cause there are so many skills! Uhh " << this->_Name << std::endl;
+	return(this->_EnergyPoints);
+}
+
+void				ClapTrap::displayCharacter()
+{
+	std::cout << std::endl;
+	std::cout << "\033[34mCL4P-TP Quick checkup " << this->_Name << " !" << std::endl;
 	std::cout << "HP : " << this->_HitPoints << std::endl;
 	std::cout << "Energy Points : " << this->ClapTrap::_EnergyPoints << std::endl;
 	std::cout << "You can't have more than : " << this->_MaxEnergyPoints << std::endl;
@@ -56,7 +62,7 @@ void			ClapTrap::displayCharacter()
 	std::cout << "Armor Damage Reduction : " << this->_ArmorDamageReduction << std::endl << std::endl;
 }
 
-void			ClapTrap::takeDamage(unsigned int amount)
+void				ClapTrap::takeDamage(unsigned int amount)
 {
 	if ((this->_HitPoints - ((int)amount - (int)this->_ArmorDamageReduction)) < 0)
 	{
@@ -73,7 +79,7 @@ void			ClapTrap::takeDamage(unsigned int amount)
 	return ;
 }
 
-void			ClapTrap::beRepaired(unsigned int amount)
+void				ClapTrap::beRepaired(unsigned int amount)
 {
 	if ((amount + this->_HitPoints) > this->_MaxHitPoints)
 		this->_HitPoints = this->_MaxHitPoints;
