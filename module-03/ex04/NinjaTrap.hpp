@@ -6,7 +6,7 @@
 /*   By: sohechai <sohechai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/29 17:45:51 by sohechai          #+#    #+#             */
-/*   Updated: 2021/03/31 18:19:36 by sohechai         ###   ########lyon.fr   */
+/*   Updated: 2021/04/08 15:41:33 by sohechai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 # include <iostream>
 # include <unistd.h>
 
-class		NinjaTrap : public ClapTrap
+class		NinjaTrap : virtual public ClapTrap
 {
 	public:
 
@@ -32,6 +32,16 @@ class		NinjaTrap : public ClapTrap
 	void				ninjaShoebox(ClapTrap &target);
 	void				ninjaShoebox(FragTrap &target);
 	void				ninjaShoebox(ScavTrap &target);
+
+	protected:
+
+	static const int				super_HitPoints = 60;
+	static const unsigned int		super_MaxHitPoints = 60;
+	static const unsigned int		super_EnergyPoints = 120;
+	static const unsigned int		super_MaxEnergyPoints = 120;
+	static const unsigned int		super_MeleeAttackDamage = 60;
+	static const unsigned int		super_RangedAttackDamage = 5;
+	static const unsigned int		super_ArmorDamageReduction = 0;
 
 };
 

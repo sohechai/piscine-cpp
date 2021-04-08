@@ -6,7 +6,7 @@
 /*   By: sohechai <sohechai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/29 18:30:45 by sohechai          #+#    #+#             */
-/*   Updated: 2021/03/31 18:44:10 by sohechai         ###   ########lyon.fr   */
+/*   Updated: 2021/04/08 15:50:31 by sohechai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,45 +14,36 @@
 
 SuperTrap::SuperTrap(void)
 {
-    return ;
+	std::cout << "\033[1;33mSUPER-TP Hey everybody! Check out my package!\033[00m" << std::endl;
 }
 
-SuperTrap::SuperTrap(std::string name) : _Name(name), _Level(1)
+SuperTrap::SuperTrap(std::string name) : ClapTrap(name,
+												FragTrap::super_HitPoints,
+												FragTrap::super_MaxHitPoints,
+												NinjaTrap::super_EnergyPoints,
+												NinjaTrap::super_MaxEnergyPoints,
+												1,
+												NinjaTrap::super_MeleeAttackDamage,
+												FragTrap::super_RangedAttackDamage,
+												FragTrap::super_ArmorDamageReduction)
 {
-    this->_HitPoints = FragTrap::_HitPoints;
-    this->_MaxHitPoints = FragTrap::_MaxHitPoints;
-    this->_EnergyPoints = NinjaTrap::_EnergyPoints;
-    this->_MaxEnergyPoints = NinjaTrap::_MaxEnergyPoints;
-    this->_MeleeAttackDamage = NinjaTrap::_MeleeAttackDamage;
-    this->_RangedAttackDamage = FragTrap::_RangedAttackDamage;
-    this->_ArmorDamageReduction = FragTrap::_ArmorDamageReduction;
 
-    std::cout << this->_Level << std::endl;
-    std::cout << this->_HitPoints << std::endl;
-    std::cout << this->_MaxHitPoints << std::endl;
-    std::cout << this->_EnergyPoints << std::endl;
-    std::cout << this->_MaxEnergyPoints << std::endl;
-    std::cout << this->_MeleeAttackDamage << std::endl;
-    std::cout << this->_RangedAttackDamage << std::endl;
-    std::cout << this->_ArmorDamageReduction << std::endl;
-    std::cout << "constructor of super trap called" << std::endl;
-
-    return ;
+	std::cout << "\033[1;33mSUPER-TP Hey everybody! Check out my package!\033[00m" << std::endl;
 }
 
 SuperTrap::~SuperTrap(void)
 {
-    std::cout << "destructor of super trap called" << std::endl;
-
-    return ;
+	std::cout << "\033[1;33mSUPER-TP I'M DEAD I'M DEAD OHMYGOD I'M DEAD!\033[00m" << std::endl;
 }
 
-void	    	SuperTrap::rangedAttack(std::string const &target)
+void		SuperTrap::rangedAttack( std::string const &target )
 {
-    FragTrap::rangedAttack(target);
+	FragTrap::rangedAttack(target);
+	std::cout << std::endl << "\033[33mSUPER-TP \033[00m" << "Nice attack !" << std::endl;
 }
 
-void			SuperTrap::meleeAttack(std::string const &target)
+void		SuperTrap::meleeAttack( std::string const &target )
 {
-    NinjaTrap::meleeAttack(target);
+	NinjaTrap::meleeAttack(target);
+	std::cout << std::endl << "\033[33mSUPER-TP \033[00m" << "Nice attack !" << std::endl;
 }

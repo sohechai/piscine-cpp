@@ -6,7 +6,7 @@
 /*   By: sohechai <sohechai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/29 13:32:42 by sohechai          #+#    #+#             */
-/*   Updated: 2021/03/31 18:37:46 by sohechai         ###   ########lyon.fr   */
+/*   Updated: 2021/04/08 15:41:46 by sohechai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ class		ClapTrap
 	public:
 
 	ClapTrap(void);
-	ClapTrap(std::string name, 
+	ClapTrap(std::string name,
 			int HitPoints,
 			unsigned int MaxHitPoints,
 			unsigned int EnergyPoints,

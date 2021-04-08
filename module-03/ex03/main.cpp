@@ -6,7 +6,7 @@
 /*   By: sohechai <sohechai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/29 12:52:45 by sohechai          #+#    #+#             */
-/*   Updated: 2021/03/31 18:02:45 by sohechai         ###   ########lyon.fr   */
+/*   Updated: 2021/04/06 15:20:57 by sohechai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ int		main(void)
 	john.beRepaired(25);
 
 	john.takeDamage(40);
-	
+
 	john.displayCharacter();
 
 	sofia.challengeNewcomer();

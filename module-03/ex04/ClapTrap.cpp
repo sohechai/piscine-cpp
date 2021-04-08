@@ -6,7 +6,7 @@
 /*   By: sohechai <sohechai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/29 13:32:40 by sohechai          #+#    #+#             */
-/*   Updated: 2021/03/31 18:38:57 by sohechai         ###   ########lyon.fr   */
+/*   Updated: 2021/04/08 15:41:23 by sohechai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ ClapTrap::ClapTrap(void)
 	return ;
 }
 
-ClapTrap::ClapTrap(std::string Name, 
+ClapTrap::ClapTrap(std::string Name,
 					int HitPoints,
 					unsigned int MaxHitPoints,
 					unsigned int EnergyPoints,
@@ -72,14 +72,15 @@ void				ClapTrap::takeDamage(unsigned int amount)
 	if ((this->_HitPoints - ((int)amount - (int)this->_ArmorDamageReduction)) < 0)
 	{
 		this->_HitPoints = 0;
+		std::cout << "You died .. Hopefully you have a second wind !" << std::endl;
 		std::cout << "You just revived and gained 20 HP, take care !" << std::endl;
-		std::cout << "          I'm back! Woo!" << std::endl;
+		std::cout << "I'm back! Woo!" << std::endl;
 		beRepaired(20);
 		return ;
 	}
 	this->_HitPoints -= (amount - this->_ArmorDamageReduction);
 
-	std::cout << "          " << this->_Name << " took \033[1;31m" << amount << " points of damages !\033[0m"<< std::endl;
+	std::cout << this->_Name << " took \033[1;31m" << amount << " points of damages !\033[0m"<< std::endl;
 
 	return ;
 }
@@ -91,9 +92,9 @@ void				ClapTrap::beRepaired(unsigned int amount)
 	else
 		this->_HitPoints += amount;
 
-	std::cout << "          Health! Eww, what flavor is red?" << std::endl;
-	std::cout << "          " << this->_Name << " \033[32mhealed \033[00m " << amount << " HP !"<< std::endl;
-	std::cout << "          " << this->_Name << " \033[32mnow have \033[1;32m" << this->_HitPoints << " points of life\033[00m !" << std::endl;
+	std::cout << "Health! Eww, what flavor is red?" << std::endl;
+	std::cout << this->_Name << " \033[32mhealed \033[00m " << amount << " HP !"<< std::endl;
+	std::cout << this->_Name << " \033[32mnow have \033[1;32m" << this->_HitPoints << " points of life\033[00m !" << std::endl;
 
 	return ;
 }

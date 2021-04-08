@@ -6,7 +6,7 @@
 /*   By: sohechai <sohechai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/29 17:45:45 by sohechai          #+#    #+#             */
-/*   Updated: 2021/03/31 18:19:56 by sohechai         ###   ########lyon.fr   */
+/*   Updated: 2021/04/08 15:41:23 by sohechai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,27 +54,27 @@ void				NinjaTrap::ninjaShoebox(NinjaTrap const &target)
 {
     std::cout << "\033[33mNINJ4-TP \033[00mOh that's me .. " << target._Name << std::endl;
 
-    return ; 
+    return ;
 }
 
 void				NinjaTrap::ninjaShoebox(ClapTrap &target)
 {
     std::cout << "\033[33mNINJ4-TP \033[00mHey, " << target.getName() << " hey, Clap Trap ! I'm Ninja Trap" << std::endl;
 
-    return ; 
+    return ;
 }
 
 void				NinjaTrap::ninjaShoebox(FragTrap &target)
 {
     std::cout << "\033[33mNINJ4-TP \033[00mHey, " << target.getName() << " hey, Frag Trap ! I'm Ninja Trap" << std::endl;
 
-    return ; 
+    return ;
 }
 
 void				NinjaTrap::ninjaShoebox(ScavTrap &target)
 {
     std::cout << "\033[33mNINJ4-TP \033[00mHey, " << target.getName()  << " ! " << target.getEnergyPoint() << " Energy Points left ;)" << std::endl;
 
-    return ; 
+    return ;
 }
 
