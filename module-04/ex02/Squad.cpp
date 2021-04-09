@@ -1,33 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   SuperMutant.hpp                                    :+:      :+:    :+:   */
+/*   Squad.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sohechai <sohechai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/09 15:49:56 by sohechai          #+#    #+#             */
-/*   Updated: 2021/04/09 15:57:12 by sohechai         ###   ########lyon.fr   */
+/*   Created: 2021/04/09 18:30:58 by sohechai          #+#    #+#             */
+/*   Updated: 2021/04/09 18:55:26 by sohechai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SUPERMUTANT_HPP
-# define SUPERMUTANT_HPP
-# include "Enemy.hpp"
-# include <iostream>
+#include "Squad.hpp"
 
-class		SuperMutant : public Enemy
+Squad::Squad()
 {
-	public:
+	return ;
+}
 
-	SuperMutant();
-	~SuperMutant();
+Squad::~Squad()
+{
+	return ;
+}
 
-	SuperMutant&			operator=(SuperMutant const &rhs);
+int				Squad::getCount() const
+{
+	return (this->_Squadnb);
+}
 
-	virtual void	takeDamage(int);
+ISpaceMarine*	Squad::getUnit(int N) const
+{
+	
+}
 
-};
+int 			Squad::push(ISpaceMarine*)
+{
 
-// std::ostream&			operator << (std::ostream &o, Peon const &i);
-
-#endif
+}

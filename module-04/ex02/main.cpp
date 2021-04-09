@@ -5,53 +5,33 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: sohechai <sohechai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/09 17:48:15 by sohechai          #+#    #+#             */
-/*   Updated: 2021/04/09 18:07:12 by sohechai         ###   ########lyon.fr   */
+/*   Created: 2021/04/09 19:07:23 by sohechai          #+#    #+#             */
+/*   Updated: 2021/04/09 19:08:05 by sohechai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "AWeapon.hpp"
-#include "Character.hpp"
-#include "Enemy.hpp"
-#include "PlasmaRifle.hpp"
-#include "PowerFist.hpp"
-#include "RadScorpion.hpp"
-#include "SuperMutant.hpp"
+#include "Squad.hpp"
+#include "AssaultTerminator.hpp"
+#include "TacticalMarine.hpp"
 
 int main()
 {
-	Character* moi = new Character("moi");
+	ISpaceMarine* bob = new TacticalMarine;
+	ISpaceMarine* jim = new AssaultTerminator;
+	ISquad* vlc = new Squad;
 
-	std::cout << *moi;
+	vlc->push(bob);
+	vlc->push(jim);
 
-	Enemy* b = new RadScorpion();
-	AWeapon* pr = new PlasmaRifle();
-	AWeapon* pf = new PowerFist();
+	for (int i = 0; i < vlc->getCount(); ++i)
+	{
+		ISpaceMarine* cur = vlc->getUnit(i);
+		cur->battleCry();
+		cur->rangedAttack();
+		cur->meleeAttack();
+	}
 
-	moi->equip(pr);
-
-	std::cout << *moi;
-
-	moi->equip(pf);
-	moi->attack(b);
-
-	std::cout << *moi;
-
-	moi->equip(pr);
-
-	std::cout << *moi;
-
-	moi->attack(b);
-
-	std::cout << *moi;
-
-	moi->attack(b);
-
-	std::cout << *moi;
-
-	delete pr;
-	delete pf;
-	delete moi;
+	delete vlc;
 
 	return (0);
 }

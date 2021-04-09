@@ -1,30 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   SuperMutant.hpp                                    :+:      :+:    :+:   */
+/*   TacticalMarine.hpp                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sohechai <sohechai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/09 15:49:56 by sohechai          #+#    #+#             */
-/*   Updated: 2021/04/09 15:57:12 by sohechai         ###   ########lyon.fr   */
+/*   Created: 2021/04/09 18:38:52 by sohechai          #+#    #+#             */
+/*   Updated: 2021/04/09 19:09:38 by sohechai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SUPERMUTANT_HPP
-# define SUPERMUTANT_HPP
-# include "Enemy.hpp"
+#ifndef TACTICALMARINE_HPP
+# define TACTICALMARINE_HPP
+# include "ISpaceMarine.hpp"
 # include <iostream>
 
-class		SuperMutant : public Enemy
+class		TacticalMarine : public ISpaceMarine
 {
 	public:
 
-	SuperMutant();
-	~SuperMutant();
+	TacticalMarine();
+	virtual ~TacticalMarine();
 
-	SuperMutant&			operator=(SuperMutant const &rhs);
+	// AWeapon&		operator=(AWeapon const &rhs);
 
-	virtual void	takeDamage(int);
+	virtual ISpaceMarine*	clone() const = 0;
+	virtual void			battleCry() const = 0;
+	virtual void			rangedAttack() const = 0;
+	virtual void			meleeAttack() const = 0;
+
+	private:
+
+	
 
 };
 

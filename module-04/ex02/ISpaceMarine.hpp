@@ -1,33 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   SuperMutant.hpp                                    :+:      :+:    :+:   */
+/*   ISpaceMarine.hpp                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sohechai <sohechai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/09 15:49:56 by sohechai          #+#    #+#             */
-/*   Updated: 2021/04/09 15:57:12 by sohechai         ###   ########lyon.fr   */
+/*   Created: 2021/04/09 18:36:53 by sohechai          #+#    #+#             */
+/*   Updated: 2021/04/09 18:57:28 by sohechai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SUPERMUTANT_HPP
-# define SUPERMUTANT_HPP
-# include "Enemy.hpp"
+#ifndef ISPACEMARINE_HPP
+# define ISPACEMARINE_HPP
 # include <iostream>
 
-class		SuperMutant : public Enemy
+class	ISpaceMarine
 {
 	public:
 
-	SuperMutant();
-	~SuperMutant();
-
-	SuperMutant&			operator=(SuperMutant const &rhs);
-
-	virtual void	takeDamage(int);
+	virtual ~ISpaceMarine() {}
+	virtual ISpaceMarine*	clone() const = 0;
+	virtual void 			battleCry() const = 0;
+	virtual void 			rangedAttack() const = 0;
+	virtual void			meleeAttack() const = 0;
 
 };
-
-// std::ostream&			operator << (std::ostream &o, Peon const &i);
 
 #endif
