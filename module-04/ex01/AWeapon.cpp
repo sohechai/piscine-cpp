@@ -12,10 +12,10 @@
 
 #include "AWeapon.hpp"
 
-AWeapon::AWeapon(std::string const & name, int apcost, int damage) :
+AWeapon::AWeapon(std::string const & name, int damage, int apcost) :
 														_Name(name),
-														_ActionPoints(apcost),
-														_Damage(damage)
+														_Damage(damage),
+														_ActionPoints(apcost)
 {
 	return ;
 }

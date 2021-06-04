@@ -20,38 +20,32 @@
 
 int main()
 {
-	Character* moi = new Character("moi");
-
-	std::cout << *moi;
+	Character* me = new Character("me");
+	std::cout << *me;
 
 	Enemy* b = new RadScorpion();
 	AWeapon* pr = new PlasmaRifle();
 	AWeapon* pf = new PowerFist();
 
-	moi->equip(pr);
+	me->equip(pr);
+	std::cout << *me;
 
-	std::cout << *moi;
+	me->equip(pf);
+	me->attack(b);
+	std::cout << *me;
 
-	moi->equip(pf);
-	moi->attack(b);
+	me->equip(pr);
+	std::cout << *me;
 
-	std::cout << *moi;
+	me->attack(b);
+	std::cout << *me;
 
-	moi->equip(pr);
-
-	std::cout << *moi;
-
-	moi->attack(b);
-
-	std::cout << *moi;
-
-	moi->attack(b);
-
-	std::cout << *moi;
+	me->attack(b);
+	std::cout << *me;
 
 	delete pr;
 	delete pf;
-	delete moi;
+	delete me;
 
 	return (0);
 }

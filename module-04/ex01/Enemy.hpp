@@ -27,7 +27,7 @@ class		Enemy
 	int				getHP() const;
 	virtual void	takeDamage(int);
 
-	private:
+	protected:
 
 	int					_HP;
 	std::string const	_Type;

@@ -14,6 +14,7 @@
 
 Character::Character(std::string const & name) : _Name(name), _ActionPoints(40)
 {
+	this->_Weapon = NULL;
 	return ;
 }
 
@@ -52,7 +53,7 @@ void 				Character::equip(AWeapon* weapon)
 
 void 				Character::attack(Enemy* enemy)
 {
-	if (this->_Weapon->getName() != "NULL")
+	if (this->_Weapon->getName() != "NULL" && this->_ActionPoints > 0)
 	{
 		std::cout << this->_Name << " attack " << enemy->getType() << " with a " << this->_Weapon->getName() << std::endl;
 		this->_Weapon->attack();
@@ -83,7 +84,7 @@ AWeapon*			Character::getWeapon() const
 std::ostream&			operator << (std::ostream &o, Character const &i)
 {
 	if (i.getWeapon())
-		o << i.getName() << " has " << i.getActionPoints() << " AP and carries a " << i.getWeapon()->getName() << std::endl;
+		o << i.getName() << " has " << i.getActionPoints() << " AP and wields a " << i.getWeapon()->getName() << std::endl;
 	else
 		o << i.getName() << " has " << i.getActionPoints() << " AP and is unarmed" << std::endl;
 

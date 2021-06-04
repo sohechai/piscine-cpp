@@ -18,7 +18,7 @@ class		AWeapon
 {
 	public:
 
-	AWeapon(std::string const & name, int apcost, int damage);
+	AWeapon(std::string const & name, int damage, int apcost);
 	virtual ~AWeapon();
 
 	AWeapon&		operator=(AWeapon const &rhs);
@@ -33,11 +33,10 @@ class		AWeapon
 	AWeapon();
 
 	std::string			_Name;
-	unsigned int		_ActionPoints;
-	unsigned int		_Damage;
+	int					_Damage;
+	int					_ActionPoints;
 	std::string			_Sounds;
 	std::string			_VisualEffects;
-
 };
 
 // std::ostream&			operator << (std::ostream &o, Peon const &i);
