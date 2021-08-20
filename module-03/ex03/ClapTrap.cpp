@@ -5,90 +5,74 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: sohechai <sohechai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/29 13:32:40 by sohechai          #+#    #+#             */
-/*   Updated: 2021/03/31 16:14:00 by sohechai         ###   ########lyon.fr   */
+/*   Created: 2021/03/28 13:35:31 by sohechai          #+#    #+#             */
+/*   Updated: 2021/08/17 17:19:53 by sohechai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
-ClapTrap::ClapTrap(std::string Name, 
-					int HitPoints,
-					unsigned int MaxHitPoints,
-					unsigned int EnergyPoints,
-					unsigned int MaxEnergyPoints,
-					unsigned int Level,
-					unsigned int MeleeAttackDamage,
-					unsigned int RangedAttackDamage,
-					unsigned int ArmorDamageReduction) :
-					_Name(Name),
-					_HitPoints(HitPoints),
-					_MaxHitPoints(MaxHitPoints),
-					_EnergyPoints(EnergyPoints),
-					_MaxEnergyPoints(MaxEnergyPoints),
-					_Level(Level),
-					_MeleeAttackDamage(MeleeAttackDamage),
-					_RangedAttackDamage(RangedAttackDamage),
-					_ArmorDamageReduction(ArmorDamageReduction)
+ClapTrap::ClapTrap(std::string name) :
+									_Name(name),
+									_HitPoints(10),
+									_EnergyPoints(10),
+									_AttackDamage(0)
 {
-	std::cout << "CL4P-TP called" << std::endl;
+	std::cout << "\033[1;33mCL4P-TP Hey everybody! Check out my package!\033[00m" << std::endl;
+	return ;
+}
+
+
+ClapTrap::ClapTrap(std::string name, unsigned int HitPoints, unsigned int EnergyPoints, unsigned int AttackDamage) :
+									_Name(name),
+									_HitPoints(HitPoints),
+									_EnergyPoints(EnergyPoints),
+									_AttackDamage(AttackDamage)
+{
+	std::cout << "\033[1;33mCL4P-TP Hey everybody! Check out my package!\033[00m" << std::endl;
 	return ;
 }
 
 ClapTrap::~ClapTrap(void)
 {
-	std::cout << "CL4P-TP bye" << std::endl;
+	std::cout << "\033[1;33mCL4P-TP I'M DEAD I'M DEAD OHMYGOD I'M DEAD!\033[00m" << std::endl;
 	return ;
 }
 
-std::string			ClapTrap::getName()
+void			ClapTrap::Attack(std::string const &target)
 {
-	return(this->_Name);
+	std::cout << std::endl << "\033[33mClapTrap \033[00m" << this->_Name << " \033[31mattack \033[00m" <<
+	target << " causing " << this->_AttackDamage << " point(s) of damage!" << std::endl;
+
+	std::cout << "-" << this->_EnergyPoints << " energy point(s) !" << std::endl;
+	return ;
 }
 
-unsigned int		ClapTrap::getEnergyPoint()
-{
-	return(this->_EnergyPoints);
-}
 
-void				ClapTrap::displayCharacter()
+void			ClapTrap::takeDamage(unsigned int amount)
 {
-	std::cout << std::endl;
-	std::cout << "\033[34mCL4P-TP Quick checkup " << this->_Name << " !" << std::endl;
-	std::cout << "HP : " << this->_HitPoints << std::endl;
-	std::cout << "Energy Points : " << this->ClapTrap::_EnergyPoints << std::endl;
-	std::cout << "You can't have more than : " << this->_MaxEnergyPoints << std::endl;
-	std::cout << "Level : " << this->_Level << std::endl;
-	std::cout << "Armor Damage Reduction : " << this->_ArmorDamageReduction << std::endl << std::endl;
-}
-
-void				ClapTrap::takeDamage(unsigned int amount)
-{
-	if ((this->_HitPoints - ((int)amount - (int)this->_ArmorDamageReduction)) < 0)
+	if ((this->_HitPoints - ((int)amount)) < 0)
 	{
 		this->_HitPoints = 0;
-		std::cout << "You just revived and gained 20 HP, take care !" << std::endl;
-		std::cout << "          I'm back! Woo!" << std::endl;
+		std::cout << std::endl << "You just revived and gained 20 HP, take care !" << std::endl;
+		std::cout << "\033[33mCL4P-TP \033[00mI'm back! Woo!" << std::endl;
 		beRepaired(20);
 		return ;
 	}
-	this->_HitPoints -= (amount - this->_ArmorDamageReduction);
+	this->_HitPoints -= amount;
 
-	std::cout << "          " << this->_Name << " took \033[1;31m" << amount << " points of damages !\033[0m"<< std::endl;
+	std::cout << std::endl << "\033[33mCL4P-TP \033[00m" << this->_Name << " took \033[1;31m" << amount << " point(s) of damages !\033[0m"<< std::endl;
 
 	return ;
 }
 
-void				ClapTrap::beRepaired(unsigned int amount)
+void			ClapTrap::beRepaired(unsigned int amount)
 {
-	if ((amount + this->_HitPoints) > this->_MaxHitPoints)
-		this->_HitPoints = this->_MaxHitPoints;
-	else
-		this->_HitPoints += amount;
+	this->_HitPoints += amount;
 
-	std::cout << "          Health! Eww, what flavor is red?" << std::endl;
-	std::cout << "          " << this->_Name << " \033[32mhealed \033[00m " << amount << " HP !"<< std::endl;
-	std::cout << "          " << this->_Name << " \033[32mnow have \033[1;32m" << this->_HitPoints << " points of life\033[00m !" << std::endl;
+	std::cout << std::endl << "\033[33mCL4P-TP\033[00m Health! Eww, what flavor is red?" << std::endl;
+	std::cout << "\033[33mCL4P-TP \033[00m" << this->_Name << " \033[32mhealed \033[00m " << amount << " HP !"<< std::endl;
+	std::cout << "\033[33mCL4P-TP \033[00m" << this->_Name << " \033[32mnow have \033[1;32m" << this->_HitPoints << " point(s) of life\033[00m !" << std::endl;
 
 	return ;
 }

@@ -6,7 +6,7 @@
 /*   By: sohechai <sohechai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/28 13:35:33 by sohechai          #+#    #+#             */
-/*   Updated: 2021/03/30 10:41:58 by sohechai         ###   ########lyon.fr   */
+/*   Updated: 2021/08/17 17:22:57 by sohechai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,17 +16,15 @@
 # include <iostream>
 # include <unistd.h>
 
-class		FragTrap : public ClapTrap
+class		FragTrap : virtual public ClapTrap
 {
 	public:
-
-	FragTrap(std::string name);
+	FragTrap(std::string);
 	~FragTrap(void);
 
-	void				rangedAttack(std::string const &target);
-	void				meleeAttack(std::string const &target);
-	void				vaulthunter_dot_exe(std::string const &target);
-
+	void				Attack(std::string const &target);
+	void 				highFivesGuys(void);
+	
 };
 
 #endif

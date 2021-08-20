@@ -20,12 +20,11 @@ class		FragTrap : public ClapTrap
 {
 	public:
 
-	FragTrap(std::string name);
+	FragTrap(std::string);
 	~FragTrap(void);
 
-	void				rangedAttack(std::string const &target);
-	void				meleeAttack(std::string const &target);
-	void				vaulthunter_dot_exe(std::string const &target);
+	void				Attack(std::string const &target);
+	void 				highFivesGuys(void);
 
 };
 

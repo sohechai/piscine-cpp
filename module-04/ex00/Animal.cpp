@@ -1,35 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Animal.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sohechai <sohechai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/28 13:35:36 by sohechai          #+#    #+#             */
-/*   Updated: 2021/03/29 13:25:41 by sohechai         ###   ########lyon.fr   */
+/*   Created: 2021/08/18 14:34:29 by sohechai          #+#    #+#             */
+/*   Updated: 2021/08/18 16:14:58 by sohechai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
+#include "Animal.hpp"
 
-int		main(void)
+Animal::Animal()
 {
-	ClapTrap	Jhon("Jhon");
-	std::string monster = "final boss";
+	std::cout << "An animal is born" << std::endl;
+}
 
-//	Jhon.displayCharacter();
-	Jhon.beRepaired(100);
-	Jhon.Attack(monster);
+Animal::~Animal(void)
+{
+	std::cout << "An animal is dead" << std::endl;
+}
 
-	Jhon.takeDamage(30);
+void        Animal::makeSound() const
+{
+	std::cout << "I'm an animal !" << std::endl;	
+}
 
-	Jhon.Attack(monster);
-	Jhon.beRepaired(25);
-
-	Jhon.Attack(monster);
-	Jhon.beRepaired(25);
-
-	Jhon.takeDamage(40);
-
-	return (0);
+std::string Animal::getType(void) const
+{
+	return (this->type);
 }

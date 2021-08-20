@@ -18,24 +18,13 @@ ClapTrap::ClapTrap(std::string name) :
 									_EnergyPoints(10),
 									_AttackDamage(0)
 {
-	std::cout << "\033[1;33mCL4P-TP Hey everybody! Check out my package!\033[00m" << std::endl;
-	return ;
-}
-
-
-ClapTrap::ClapTrap(std::string name, unsigned int HitPoints, unsigned int EnergyPoints, unsigned int AttackDamage) :
-									_Name(name),
-									_HitPoints(HitPoints),
-									_EnergyPoints(EnergyPoints),
-									_AttackDamage(AttackDamage)
-{
-	std::cout << "\033[1;33mCL4P-TP Hey everybody! Check out my package!\033[00m" << std::endl;
+	std::cout << "\033[1;33mFR4G-TP Hey everybody! Check out my package!\033[00m" << std::endl;
 	return ;
 }
 
 ClapTrap::~ClapTrap(void)
 {
-	std::cout << "\033[1;33mCL4P-TP I'M DEAD I'M DEAD OHMYGOD I'M DEAD!\033[00m" << std::endl;
+	std::cout << std::endl << "\033[1;33mFR4G-TP I'M DEAD I'M DEAD OHMYGOD I'M DEAD!\033[00m" << std::endl;
 	return ;
 }
 
@@ -61,7 +50,7 @@ void			ClapTrap::takeDamage(unsigned int amount)
 	}
 	this->_HitPoints -= amount;
 
-	std::cout << std::endl << "\033[33mCL4P-TP \033[00m" << this->_Name << " took \033[1;31m" << amount << " points of damages !\033[0m"<< std::endl;
+	std::cout << std::endl << "\033[33mFR4G-TP \033[00m" << this->_Name << " took \033[1;31m" << amount << " points of damages !\033[0m"<< std::endl;
 
 	return ;
 }
@@ -70,39 +59,9 @@ void			ClapTrap::beRepaired(unsigned int amount)
 {
 	this->_HitPoints += amount;
 
-	std::cout << std::endl << "\033[33mCL4P-TP\033[00m Health! Eww, what flavor is red?" << std::endl;
+	std::cout << std::endl << "\033[33mFR4G-TP\033[00m Health! Eww, what flavor is red?" << std::endl;
 	std::cout << "\033[33mFR4G-TP \033[00m" << this->_Name << " \033[32mhealed \033[00m " << amount << " HP !"<< std::endl;
 	std::cout << "\033[33mFR4G-TP \033[00m" << this->_Name << " \033[32mnow have \033[1;32m" << this->_HitPoints << " points of life\033[00m !" << std::endl;
 
 	return ;
-}
-
-std::string			ClapTrap::getName()
-{
-	return(_Name);
-}
-
-int					ClapTrap::getHP()
-{
-	return(_HitPoints);
-}
-
-unsigned int		ClapTrap::getEP()
-{
-	return(_EnergyPoints);
-}
-
-unsigned int		ClapTrap::getAD()
-{
-	return(_AttackDamage);
-}
-
-void				ClapTrap::setHP(int HitPoints)
-{
-	this->_HitPoints = HitPoints;
-}
-
-void				ClapTrap::setEP(unsigned int EnergyPoints)
-{
-	this->_EnergyPoints = EnergyPoints;
 }

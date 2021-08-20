@@ -5,47 +5,31 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: sohechai <sohechai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/09 17:48:15 by sohechai          #+#    #+#             */
-/*   Updated: 2021/04/09 18:07:12 by sohechai         ###   ########lyon.fr   */
+/*   Created: 2021/08/18 14:34:31 by sohechai          #+#    #+#             */
+/*   Updated: 2021/08/19 16:01:27 by sohechai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "AWeapon.hpp"
-#include "Character.hpp"
-#include "Enemy.hpp"
-#include "PlasmaRifle.hpp"
-#include "PowerFist.hpp"
-#include "RadScorpion.hpp"
-#include "SuperMutant.hpp"
+#include "Animal.hpp"
+#include "Dog.hpp"
+#include "Cat.hpp"
+#include "WrongAnimal.hpp"
+#include "WrongCat.hpp"
 
 int main()
 {
-	Character* me = new Character("me");
-	std::cout << *me;
-
-	Enemy* b = new RadScorpion();
-	AWeapon* pr = new PlasmaRifle();
-	AWeapon* pf = new PowerFist();
-
-	me->equip(pr);
-	std::cout << *me;
-
-	me->equip(pf);
-	me->attack(b);
-	std::cout << *me;
-
-	me->equip(pr);
-	std::cout << *me;
-
-	me->attack(b);
-	std::cout << *me;
-
-	me->attack(b);
-	std::cout << *me;
-
-	delete pr;
-	delete pf;
-	delete me;
-
-	return (0);
+    Animal *zoo[10];
+    for (int i = 0; i < 10; i++)
+    {
+        if (i % 2 == 0)
+            zoo[i] = new Dog;
+        else
+            zoo[i] = new Cat;
+        std::cout << &(zoo[i]) << std::endl;
+        std::cout << "_____________________________\n";
+    }
+    for (int i = 0; i < 10; i++)
+    {
+        delete zoo[i];
+    }
 }

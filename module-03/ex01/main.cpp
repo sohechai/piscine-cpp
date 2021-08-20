@@ -11,36 +11,29 @@
 /* ************************************************************************** */
 
 #include "ScavTrap.hpp"
-#include "FragTrap.hpp"
+#include "ClapTrap.hpp"
 
 int		main(void)
 {
-	FragTrap	john("John");
+	ClapTrap	wassim("wassim");
 	ScavTrap	sofia("Sofia");
 	std::string monster = "final boss";
 
-	john.displayCharacter();
+	wassim.Attack(monster);
+	wassim.takeDamage(30);
+	wassim.Attack(monster);
+	wassim.beRepaired(25);
+	wassim.Attack(monster);
+	wassim.beRepaired(25);
+	wassim.takeDamage(40);
 
-	john.meleeAttack(monster);
-
-	john.takeDamage(30);
-
-	john.rangedAttack(monster);
-	john.beRepaired(25);
-
-	john.rangedAttack(monster);
-	john.beRepaired(25);
-
-	john.takeDamage(40);
-	
-	john.displayCharacter();
-
-	sofia.challengeNewcomer();
-	usleep(1000000);
-	sofia.challengeNewcomer();
-	usleep(1000000);
-	sofia.challengeNewcomer();
-	usleep(1000000);
+	sofia.guardGate();
+	sofia.takeDamage(30);
+	sofia.Attack(monster);
+	sofia.beRepaired(25);
+	sofia.Attack(monster);
+	sofia.beRepaired(25);
+	sofia.takeDamage(40);
 
 	return (0);
 }

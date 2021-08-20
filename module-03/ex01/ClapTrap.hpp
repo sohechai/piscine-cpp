@@ -33,7 +33,7 @@ class		ClapTrap
 	void				setHP(int HitPoints);
 	void				setEP(unsigned int EnergyPoints);
 
-	private:
+	protected:
 
 	std::string			_Name;
 	int					_HitPoints;

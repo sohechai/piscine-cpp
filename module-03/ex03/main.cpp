@@ -6,49 +6,51 @@
 /*   By: sohechai <sohechai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/29 12:52:45 by sohechai          #+#    #+#             */
-/*   Updated: 2021/04/06 15:20:57 by sohechai         ###   ########lyon.fr   */
+/*   Updated: 2021/08/17 16:54:54 by sohechai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScavTrap.hpp"
 #include "FragTrap.hpp"
 #include "ClapTrap.hpp"
-#include "NinjaTrap.hpp"
+#include "DiamondTrap.hpp"
 
 int		main(void)
 {
-	FragTrap	john("John");
+	ClapTrap	wassim("wassim");
 	ScavTrap	sofia("Sofia");
-	NinjaTrap	shikamaru("Shikamaru");
-	std::string monster = "Final boss";
+	FragTrap	john("John");
+	DiamondTrap dia("Dia");
+	std::string monster = "final boss";
 
-	shikamaru.ninjaShoebox(john);
-	shikamaru.ninjaShoebox(sofia);
-	shikamaru.ninjaShoebox(shikamaru);
+	wassim.Attack(monster);
+	wassim.takeDamage(30);
+	wassim.Attack(monster);
+	wassim.beRepaired(25);
+	wassim.Attack(monster);
+	wassim.beRepaired(25);
+	wassim.takeDamage(40);
 
-	std::cout << std::endl;
+	sofia.guardGate();
+	sofia.takeDamage(30);
+	sofia.Attack(monster);
+	sofia.beRepaired(25);
+	sofia.Attack(monster);
+	sofia.beRepaired(25);
+	sofia.takeDamage(40);
 
-	john.displayCharacter();
-
-	john.meleeAttack(monster);
-
+	john.highFivesGuys();
 	john.takeDamage(30);
-
-	john.rangedAttack(monster);
+	john.Attack(monster);
 	john.beRepaired(25);
-
-	john.rangedAttack(monster);
+	john.Attack(monster);
 	john.beRepaired(25);
-
 	john.takeDamage(40);
 
-	john.displayCharacter();
-
-	sofia.challengeNewcomer();
-
-	sofia.challengeNewcomer();
-
-	sofia.challengeNewcomer();
+	dia.guardGate();
+	dia.whoAmI();
+	dia.highFivesGuys();
+	dia.Attack(monster);
 
 	return (0);
 }

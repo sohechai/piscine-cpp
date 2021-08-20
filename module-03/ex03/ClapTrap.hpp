@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: sohechai <sohechai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/29 13:32:42 by sohechai          #+#    #+#             */
-/*   Updated: 2021/03/31 16:13:51 by sohechai         ###   ########lyon.fr   */
+/*   Created: 2021/03/28 13:35:33 by sohechai          #+#    #+#             */
+/*   Updated: 2021/08/17 17:19:55 by sohechai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,34 +19,20 @@ class		ClapTrap
 {
 	public:
 
-	ClapTrap(std::string name, 
-			int HitPoints,
-			unsigned int MaxHitPoints,
-			unsigned int EnergyPoints,
-			unsigned int MaxEnergyPoints,
-			unsigned int Level,
-			unsigned int MeleeAttackDamage,
-			unsigned int RangedAttackDamage,
-			unsigned int ArmorDamageReduction);
+	ClapTrap(std::string name);
+	ClapTrap(std::string name, unsigned int HitPoints, unsigned int EnergyPoints, unsigned int AttackDamage);
 	~ClapTrap(void);
 
-	std::string			getName();
-	unsigned int		getEnergyPoint();
+	void				Attack(std::string const &target);
 	void				takeDamage(unsigned int amount);
 	void				beRepaired(unsigned int amount);
-	void				displayCharacter();
 
 	protected:
 
 	std::string			_Name;
 	int					_HitPoints;
-	unsigned int		_MaxHitPoints;
 	unsigned int		_EnergyPoints;
-	unsigned int		_MaxEnergyPoints;
-	unsigned int		_Level;
-	unsigned int		_MeleeAttackDamage;
-	unsigned int		_RangedAttackDamage;
-	unsigned int		_ArmorDamageReduction;
+	unsigned int		_AttackDamage;
 
 };
 

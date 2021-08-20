@@ -1,35 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Brain.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sohechai <sohechai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/28 13:35:36 by sohechai          #+#    #+#             */
-/*   Updated: 2021/03/29 13:25:41 by sohechai         ###   ########lyon.fr   */
+/*   Created: 2021/08/18 17:04:17 by sohechai          #+#    #+#             */
+/*   Updated: 2021/08/19 15:50:39 by sohechai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
+#include "Brain.hpp"
 
-int		main(void)
+Brain::Brain()
 {
-	ClapTrap	Jhon("Jhon");
-	std::string monster = "final boss";
+	std::cout << "brain is up" << std::endl;
 
-//	Jhon.displayCharacter();
-	Jhon.beRepaired(100);
-	Jhon.Attack(monster);
+	return ;
+}
 
-	Jhon.takeDamage(30);
+Brain::~Brain(void)
+{
+	std::cout << "brain is over" << std::endl;
 
-	Jhon.Attack(monster);
-	Jhon.beRepaired(25);
-
-	Jhon.Attack(monster);
-	Jhon.beRepaired(25);
-
-	Jhon.takeDamage(40);
-
-	return (0);
+	return ;
 }

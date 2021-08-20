@@ -1,35 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   WrongAnimal.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sohechai <sohechai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/28 13:35:36 by sohechai          #+#    #+#             */
-/*   Updated: 2021/03/29 13:25:41 by sohechai         ###   ########lyon.fr   */
+/*   Created: 2021/08/18 16:18:37 by sohechai          #+#    #+#             */
+/*   Updated: 2021/08/18 16:20:58 by sohechai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
+#include "WrongAnimal.hpp"
 
-int		main(void)
+WrongAnimal::WrongAnimal()
 {
-	ClapTrap	Jhon("Jhon");
-	std::string monster = "final boss";
+	std::cout << "A wrong animal is born" << std::endl;
+}
 
-//	Jhon.displayCharacter();
-	Jhon.beRepaired(100);
-	Jhon.Attack(monster);
+WrongAnimal::~WrongAnimal(void)
+{
+	std::cout << "A wrong animal is dead" << std::endl;
+}
 
-	Jhon.takeDamage(30);
+void        WrongAnimal::makeSound() const
+{
+	std::cout << "I'm a wrong animal !" << std::endl;	
+}
 
-	Jhon.Attack(monster);
-	Jhon.beRepaired(25);
-
-	Jhon.Attack(monster);
-	Jhon.beRepaired(25);
-
-	Jhon.takeDamage(40);
-
-	return (0);
+std::string WrongAnimal::getType(void) const
+{
+	return (this->type);
 }

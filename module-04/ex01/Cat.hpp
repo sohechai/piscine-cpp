@@ -1,35 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sohechai <sohechai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/28 13:35:36 by sohechai          #+#    #+#             */
-/*   Updated: 2021/03/29 13:25:41 by sohechai         ###   ########lyon.fr   */
+/*   Created: 2021/08/18 14:38:42 by sohechai          #+#    #+#             */
+/*   Updated: 2021/08/19 15:51:16 by sohechai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
-
-int		main(void)
+#ifndef CAT_HPP
+# define CAT_HPP
+# include <iostream>
+# include <unistd.h>
+# include "Animal.hpp"
+# include "Brain.hpp"
+class		Cat : public Animal
 {
-	ClapTrap	Jhon("Jhon");
-	std::string monster = "final boss";
+	public:
 
-//	Jhon.displayCharacter();
-	Jhon.beRepaired(100);
-	Jhon.Attack(monster);
+	Cat();
+	~Cat(void);
 
-	Jhon.takeDamage(30);
+    virtual void        makeSound() const;
 
-	Jhon.Attack(monster);
-	Jhon.beRepaired(25);
+	private:
 
-	Jhon.Attack(monster);
-	Jhon.beRepaired(25);
+	const Brain* _brain;
 
-	Jhon.takeDamage(40);
+};
 
-	return (0);
-}
+#endif

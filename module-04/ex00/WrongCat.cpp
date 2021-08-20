@@ -1,35 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   WrongCat.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sohechai <sohechai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/28 13:35:36 by sohechai          #+#    #+#             */
-/*   Updated: 2021/03/29 13:25:41 by sohechai         ###   ########lyon.fr   */
+/*   Created: 2021/08/18 16:19:57 by sohechai          #+#    #+#             */
+/*   Updated: 2021/08/18 16:21:01 by sohechai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
+#include "WrongCat.hpp"
 
-int		main(void)
+WrongCat::WrongCat()
 {
-	ClapTrap	Jhon("Jhon");
-	std::string monster = "final boss";
+    this->type = "WrongCat";
+    std::cout << "WrongCat is born" << std::endl;
 
-//	Jhon.displayCharacter();
-	Jhon.beRepaired(100);
-	Jhon.Attack(monster);
+    return ;
+}
 
-	Jhon.takeDamage(30);
+WrongCat::~WrongCat(void)
+{
+    std::cout << "Wrong Cat is dead" << std::endl;
 
-	Jhon.Attack(monster);
-	Jhon.beRepaired(25);
+    return ;
+}
 
-	Jhon.Attack(monster);
-	Jhon.beRepaired(25);
-
-	Jhon.takeDamage(40);
-
-	return (0);
+void        WrongCat::makeSound() const
+{
+	std::cout << "Miaou !" << std::endl;	
 }

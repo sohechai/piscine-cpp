@@ -1,35 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Dog.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sohechai <sohechai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/28 13:35:36 by sohechai          #+#    #+#             */
-/*   Updated: 2021/03/29 13:25:41 by sohechai         ###   ########lyon.fr   */
+/*   Created: 2021/08/18 14:42:30 by sohechai          #+#    #+#             */
+/*   Updated: 2021/08/18 14:54:53 by sohechai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
+#include "Dog.hpp"
 
-int		main(void)
+Dog::Dog()
 {
-	ClapTrap	Jhon("Jhon");
-	std::string monster = "final boss";
+    this->type = "Dog";
+    std::cout << "Dog is born" << std::endl;
 
-//	Jhon.displayCharacter();
-	Jhon.beRepaired(100);
-	Jhon.Attack(monster);
+    return;
+}
 
-	Jhon.takeDamage(30);
+Dog::~Dog(void)
+{
+    std::cout << "Dog is dead" << std::endl;
 
-	Jhon.Attack(monster);
-	Jhon.beRepaired(25);
+    return ;
+}
 
-	Jhon.Attack(monster);
-	Jhon.beRepaired(25);
-
-	Jhon.takeDamage(40);
-
-	return (0);
+void        Dog::makeSound() const
+{
+	std::cout << "Ouaf !" << std::endl;	
 }

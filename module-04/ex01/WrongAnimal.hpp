@@ -1,35 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   WrongAnimal.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sohechai <sohechai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/28 13:35:36 by sohechai          #+#    #+#             */
-/*   Updated: 2021/03/29 13:25:41 by sohechai         ###   ########lyon.fr   */
+/*   Created: 2021/08/18 16:17:02 by sohechai          #+#    #+#             */
+/*   Updated: 2021/08/18 16:20:58 by sohechai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
+#ifndef WRONGANIMAL_HPP
+# define WRONGANIMAL_HPP
+# include <iostream>
+# include <unistd.h>
 
-int		main(void)
+class		WrongAnimal
 {
-	ClapTrap	Jhon("Jhon");
-	std::string monster = "final boss";
+	public:
 
-//	Jhon.displayCharacter();
-	Jhon.beRepaired(100);
-	Jhon.Attack(monster);
+	WrongAnimal();
+	~WrongAnimal(void);
 
-	Jhon.takeDamage(30);
+    void        makeSound() const;
+    std::string         getType(void) const;
 
-	Jhon.Attack(monster);
-	Jhon.beRepaired(25);
+	protected:
 
-	Jhon.Attack(monster);
-	Jhon.beRepaired(25);
+	std::string type;
 
-	Jhon.takeDamage(40);
+};
 
-	return (0);
-}
+#endif

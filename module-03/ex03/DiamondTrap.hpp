@@ -1,35 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   DiamondTrap.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sohechai <sohechai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/28 13:35:36 by sohechai          #+#    #+#             */
-/*   Updated: 2021/03/29 13:25:41 by sohechai         ###   ########lyon.fr   */
+/*   Created: 2021/08/17 15:49:31 by sohechai          #+#    #+#             */
+/*   Updated: 2021/08/17 16:55:28 by sohechai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
+#ifndef DIAMONDTRAP_HPP
+# define DIAMONDTRAP_HPP
+# include "ClapTrap.hpp"
+# include "FragTrap.hpp"
+# include "ScavTrap.hpp"
+# include <iostream>
+# include <unistd.h>
 
-int		main(void)
+class		DiamondTrap : public FragTrap, public ScavTrap
 {
-	ClapTrap	Jhon("Jhon");
-	std::string monster = "final boss";
+	public:
 
-//	Jhon.displayCharacter();
-	Jhon.beRepaired(100);
-	Jhon.Attack(monster);
+	DiamondTrap(std::string);
+	~DiamondTrap(void);
 
-	Jhon.takeDamage(30);
+	void				Attack(std::string const &target);
+    void                whoAmI(void);
 
-	Jhon.Attack(monster);
-	Jhon.beRepaired(25);
+    private:
 
-	Jhon.Attack(monster);
-	Jhon.beRepaired(25);
+	std::string		_Name;
+};
 
-	Jhon.takeDamage(40);
-
-	return (0);
-}
+#endif

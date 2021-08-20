@@ -6,7 +6,7 @@
 /*   By: sohechai <sohechai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/29 12:53:31 by sohechai          #+#    #+#             */
-/*   Updated: 2021/03/30 10:41:58 by sohechai         ###   ########lyon.fr   */
+/*   Updated: 2021/03/29 13:28:07 by sohechai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,8 @@ class		ScavTrap : public ClapTrap
 	ScavTrap(std::string);
 	~ScavTrap(void);
 
-	void				rangedAttack(std::string const &target);
-	void				meleeAttack(std::string const &target);
-	void				challengeNewcomer();
+	void				Attack(std::string const &target);
+	void 				guardGate();
 
 };
 
