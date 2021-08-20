@@ -1,34 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   Animal.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sohechai <sohechai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/18 14:34:27 by sohechai          #+#    #+#             */
-/*   Updated: 2021/08/20 16:17:02 by sohechai         ###   ########lyon.fr   */
+/*   Created: 2021/08/18 14:34:29 by sohechai          #+#    #+#             */
+/*   Updated: 2021/08/18 16:14:58 by sohechai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL_HPP
-# define ANIMAL_HPP
-# include <iostream>
-# include <unistd.h>
+#include "Animal.hpp"
 
-class		Animal
+Animal::Animal()
 {
-	public:
+	std::cout << "An animal is born" << std::endl;
+}
 
-	Animal();
-	virtual ~Animal(void);
+Animal::~Animal(void)
+{
+	std::cout << "An animal is dead" << std::endl;
+}
 
-    virtual void        makeSound() const;
-    std::string getType(void) const;
+void        Animal::makeSound() const
+{
+	std::cout << "I'm an animal !" << std::endl;	
+}
 
-	protected:
-
-	std::string type;
-
-};
-
-#endif
+std::string Animal::getType(void) const
+{
+	return (this->type);
+}

@@ -1,34 +1,14 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   ICharacter.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sohechai <sohechai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/18 14:34:27 by sohechai          #+#    #+#             */
-/*   Updated: 2021/08/20 16:17:02 by sohechai         ###   ########lyon.fr   */
+/*   Created: 2021/08/20 16:51:12 by sohechai          #+#    #+#             */
+/*   Updated: 2021/08/20 16:57:51 by sohechai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL_HPP
-# define ANIMAL_HPP
-# include <iostream>
-# include <unistd.h>
+#include "ICharacter.hpp"
 
-class		Animal
-{
-	public:
-
-	Animal();
-	virtual ~Animal(void);
-
-    virtual void        makeSound() const;
-    std::string getType(void) const;
-
-	protected:
-
-	std::string type;
-
-};
-
-#endif

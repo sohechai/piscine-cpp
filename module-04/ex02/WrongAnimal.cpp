@@ -1,38 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Squad.cpp                                          :+:      :+:    :+:   */
+/*   WrongAnimal.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sohechai <sohechai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/09 18:30:58 by sohechai          #+#    #+#             */
-/*   Updated: 2021/04/09 18:55:26 by sohechai         ###   ########lyon.fr   */
+/*   Created: 2021/08/18 16:18:37 by sohechai          #+#    #+#             */
+/*   Updated: 2021/08/18 16:20:58 by sohechai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Squad.hpp"
+#include "WrongAnimal.hpp"
 
-Squad::Squad()
+WrongAnimal::WrongAnimal()
 {
-	return ;
+	std::cout << "A wrong animal is born" << std::endl;
 }
 
-Squad::~Squad()
+WrongAnimal::~WrongAnimal(void)
 {
-	return ;
+	std::cout << "A wrong animal is dead" << std::endl;
 }
 
-int				Squad::getCount() const
+void        WrongAnimal::makeSound() const
 {
-	return (this->_Squadnb);
+	std::cout << "I'm a wrong animal !" << std::endl;	
 }
 
-ISpaceMarine*	Squad::getUnit(int N) const
+std::string WrongAnimal::getType(void) const
 {
-	
-}
-
-int 			Squad::push(ISpaceMarine*)
-{
-
+	return (this->type);
 }

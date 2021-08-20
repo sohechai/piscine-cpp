@@ -1,34 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   Ice.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sohechai <sohechai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/18 14:34:27 by sohechai          #+#    #+#             */
-/*   Updated: 2021/08/20 16:17:02 by sohechai         ###   ########lyon.fr   */
+/*   Created: 2021/08/20 16:59:17 by sohechai          #+#    #+#             */
+/*   Updated: 2021/08/20 17:10:51 by sohechai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL_HPP
-# define ANIMAL_HPP
-# include <iostream>
-# include <unistd.h>
+#include "Ice.hpp"
 
-class		Animal
+Ice::Ice()
 {
-	public:
+    this->type = "ice";
 
-	Animal();
-	virtual ~Animal(void);
+    return ;
+}
 
-    virtual void        makeSound() const;
-    std::string getType(void) const;
+Ice::~Ice()
+{
+    return ;
+}
 
-	protected:
+void    Ice::use(ICharacter& target)
+{
+    std::cout << "* heals " << &target << "’s wounds *" << std::endl;
 
-	std::string type;
-
-};
-
-#endif
+    return ;
+}

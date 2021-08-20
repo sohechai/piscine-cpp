@@ -5,31 +5,38 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: sohechai <sohechai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/18 14:34:31 by sohechai          #+#    #+#             */
-/*   Updated: 2021/08/19 16:01:27 by sohechai         ###   ########lyon.fr   */
+/*   Created: 2021/08/20 16:53:28 by sohechai          #+#    #+#             */
+/*   Updated: 2021/08/20 17:13:42 by sohechai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
-#include "Dog.hpp"
-#include "Cat.hpp"
-#include "WrongAnimal.hpp"
-#include "WrongCat.hpp"
+#include "IMateriaSource.hpp"
+#include "ICharacter.hpp"
+#include "AMateria.hpp"
+#include "Ice.hpp"
+#include "Cure.hpp"
 
 int main()
 {
-    Animal *zoo[10];
-    for (int i = 0; i < 10; i++)
-    {
-        if (i % 2 == 0)
-            zoo[i] = new Dog;
-        else
-            zoo[i] = new Cat;
-        std::cout << &(zoo[i]) << std::endl;
-        std::cout << "_____________________________\n";
-    }
-    for (int i = 0; i < 10; i++)
-    {
-        delete zoo[i];
-    }
+    IMateriaSource* src = new MateriaSource();
+    src->learnMateria(new Ice());
+    src->learnMateria(new Cure());
+    ICharacter* me = new Character("me");
+    AMateria* tmp;
+    tmp = src->createMateria("ice");
+
+    me->equip(tmp);
+    tmp = src->createMateria("cure");
+
+    me->equip(tmp);
+    ICharacter* bob = new Character("bob");
+
+    me->use(0, *bob);
+    me->use(1, *bob);
+
+    delete bob;
+    delete me;
+    delete src;
+
+    return 0;
 }

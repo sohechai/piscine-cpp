@@ -1,34 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   Ice.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sohechai <sohechai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/18 14:34:27 by sohechai          #+#    #+#             */
-/*   Updated: 2021/08/20 16:17:02 by sohechai         ###   ########lyon.fr   */
+/*   Created: 2021/08/20 16:55:30 by sohechai          #+#    #+#             */
+/*   Updated: 2021/08/20 17:08:45 by sohechai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL_HPP
-# define ANIMAL_HPP
+#ifndef ICE_HPP
+# define ICE_HPP
 # include <iostream>
 # include <unistd.h>
+# include "AMateria.hpp"
 
-class		Animal
+class Ice : public AMateria
 {
-	public:
+    
+    public:
 
-	Animal();
-	virtual ~Animal(void);
+    Ice();
+    ~Ice();
 
-    virtual void        makeSound() const;
-    std::string getType(void) const;
-
-	protected:
-
-	std::string type;
-
+    virtual void use(ICharacter& target);
 };
 
 #endif

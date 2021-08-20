@@ -1,30 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ISquad.hpp                                         :+:      :+:    :+:   */
+/*   WrongAnimal.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sohechai <sohechai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/09 18:29:26 by sohechai          #+#    #+#             */
-/*   Updated: 2021/04/09 18:37:24 by sohechai         ###   ########lyon.fr   */
+/*   Created: 2021/08/18 16:17:02 by sohechai          #+#    #+#             */
+/*   Updated: 2021/08/18 16:20:58 by sohechai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ISQUAD_HPP
-# define ISQUAD_HPP
-# include "ISpaceMarine.hpp"
+#ifndef WRONGANIMAL_HPP
+# define WRONGANIMAL_HPP
 # include <iostream>
+# include <unistd.h>
 
-class ISquad
+class		WrongAnimal
 {
 	public:
 
-	virtual ~ISquad() {}
-	virtual int getCount() const = 0;
-	virtual ISpaceMarine* getUnit(int) const = 0;
-	virtual int push(ISpaceMarine*) = 0;
-};
+	WrongAnimal();
+	~WrongAnimal(void);
 
-// std::ostream&			operator << (std::ostream &o, Peon const &i);
+    void        makeSound() const;
+    std::string         getType(void) const;
+
+	protected:
+
+	std::string type;
+
+};
 
 #endif

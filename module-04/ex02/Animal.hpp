@@ -1,28 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ISpaceMarine.hpp                                   :+:      :+:    :+:   */
+/*   Animal.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sohechai <sohechai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/09 18:36:53 by sohechai          #+#    #+#             */
-/*   Updated: 2021/04/09 18:57:28 by sohechai         ###   ########lyon.fr   */
+/*   Created: 2021/08/18 14:34:27 by sohechai          #+#    #+#             */
+/*   Updated: 2021/08/20 17:10:18 by sohechai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ISPACEMARINE_HPP
-# define ISPACEMARINE_HPP
+#ifndef ANIMAL_HPP
+# define ANIMAL_HPP
 # include <iostream>
+# include <unistd.h>
 
-class	ISpaceMarine
+class		AAnimal
 {
 	public:
 
-	virtual ~ISpaceMarine() {}
-	virtual ISpaceMarine*	clone() const = 0;
-	virtual void 			battleCry() const = 0;
-	virtual void 			rangedAttack() const = 0;
-	virtual void			meleeAttack() const = 0;
+	Animal();
+	virtual ~Animal(void);
+
+    virtual void        makeSound() const = 0;
+    std::string 		getType(void) const;
+
+	protected:
+
+	std::string type;
 
 };
 

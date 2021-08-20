@@ -1,39 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Squad.hpp                                          :+:      :+:    :+:   */
+/*   Character.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sohechai <sohechai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/09 18:31:03 by sohechai          #+#    #+#             */
-/*   Updated: 2021/04/09 18:54:15 by sohechai         ###   ########lyon.fr   */
+/*   Created: 2021/08/20 17:19:42 by sohechai          #+#    #+#             */
+/*   Updated: 2021/08/20 17:19:57 by sohechai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SQUAD_HPP
-# define SQUAD_HPP
-# include "ISquad.hpp"
+#ifndef CHARACTER_HPP
+# define CHARACTER_HPP
 # include <iostream>
+# include <unistd.h>
+# include "AMateria.hpp"
 
-class		Squad : public ISquad
+class Character
 {
-	public:
+    public:
 
-	Squad();
-	virtual ~Squad();
-
-	// AWeapon&		operator=(AWeapon const &rhs);
-
-	virtual int 			getCount() const = 0;
-	virtual ISpaceMarine* 	getUnit(int) const = 0;
-	virtual int 			push(ISpaceMarine*) = 0;
-
-	private:
-
-	int			_Squadnb;
-
+    virtual ~Character() {}
+    virtual std::string const & getName() const = 0;
+    virtual void equip(AMateria* m) = 0;
+    virtual void unequip(int idx) = 0;
+    virtual void use(int idx, ICharacter& target) = 0;
 };
-
-// std::ostream&			operator << (std::ostream &o, Peon const &i);
 
 #endif

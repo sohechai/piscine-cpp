@@ -1,33 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   Cure.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sohechai <sohechai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/18 14:34:27 by sohechai          #+#    #+#             */
-/*   Updated: 2021/08/20 16:17:02 by sohechai         ###   ########lyon.fr   */
+/*   Created: 2021/08/20 16:55:12 by sohechai          #+#    #+#             */
+/*   Updated: 2021/08/20 17:08:41 by sohechai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL_HPP
-# define ANIMAL_HPP
+#ifndef CURE_HPP
+# define CURE_HPP
 # include <iostream>
 # include <unistd.h>
+# include "AMateria.hpp"
 
-class		Animal
+class Cure : public AMateria
 {
-	public:
+    public:
 
-	Animal();
-	virtual ~Animal(void);
+    Cure();
+    ~Cure();
 
-    virtual void        makeSound() const;
-    std::string getType(void) const;
-
-	protected:
-
-	std::string type;
+    virtual void use(ICharacter& target);
 
 };
 

@@ -1,33 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sohechai <sohechai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/18 14:34:27 by sohechai          #+#    #+#             */
-/*   Updated: 2021/08/20 16:17:02 by sohechai         ###   ########lyon.fr   */
+/*   Created: 2021/08/18 14:38:42 by sohechai          #+#    #+#             */
+/*   Updated: 2021/08/20 16:22:36 by sohechai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL_HPP
-# define ANIMAL_HPP
+#ifndef CAT_HPP
+# define CAT_HPP
 # include <iostream>
 # include <unistd.h>
-
-class		Animal
+# include "Animal.hpp"
+# include "Brain.hpp"
+class		Cat : public Animal
 {
 	public:
 
-	Animal();
-	virtual ~Animal(void);
+	Cat();
+	~Cat(void);
 
     virtual void        makeSound() const;
-    std::string getType(void) const;
 
-	protected:
+	private:
 
-	std::string type;
+	const Brain* _brain;
 
 };
 

@@ -1,34 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   Dog.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sohechai <sohechai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/18 14:34:27 by sohechai          #+#    #+#             */
-/*   Updated: 2021/08/20 16:17:02 by sohechai         ###   ########lyon.fr   */
+/*   Created: 2021/08/18 14:42:30 by sohechai          #+#    #+#             */
+/*   Updated: 2021/08/19 15:57:53 by sohechai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL_HPP
-# define ANIMAL_HPP
-# include <iostream>
-# include <unistd.h>
+#include "Dog.hpp"
 
-class		Animal
+Dog::Dog()
 {
-	public:
+    this->_brain = new Brain;
+    this->type = "Dog";
+    std::cout << "Dog is born" << std::endl;
 
-	Animal();
-	virtual ~Animal(void);
+    return;
+}
 
-    virtual void        makeSound() const;
-    std::string getType(void) const;
+Dog::~Dog(void)
+{
+    std::cout << "Dog is dead" << std::endl;
+    delete this->_brain;
+    return ;
+}
 
-	protected:
-
-	std::string type;
-
-};
-
-#endif
+void        Dog::makeSound() const
+{
+	std::cout << "Ouaf !" << std::endl;	
+}

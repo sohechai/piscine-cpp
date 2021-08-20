@@ -1,34 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   WrongCat.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sohechai <sohechai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/18 14:34:27 by sohechai          #+#    #+#             */
-/*   Updated: 2021/08/20 16:17:02 by sohechai         ###   ########lyon.fr   */
+/*   Created: 2021/08/18 16:19:57 by sohechai          #+#    #+#             */
+/*   Updated: 2021/08/18 16:21:01 by sohechai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL_HPP
-# define ANIMAL_HPP
-# include <iostream>
-# include <unistd.h>
+#include "WrongCat.hpp"
 
-class		Animal
+WrongCat::WrongCat()
 {
-	public:
+    this->type = "WrongCat";
+    std::cout << "WrongCat is born" << std::endl;
 
-	Animal();
-	virtual ~Animal(void);
+    return ;
+}
 
-    virtual void        makeSound() const;
-    std::string getType(void) const;
+WrongCat::~WrongCat(void)
+{
+    std::cout << "Wrong Cat is dead" << std::endl;
 
-	protected:
+    return ;
+}
 
-	std::string type;
-
-};
-
-#endif
+void        WrongCat::makeSound() const
+{
+	std::cout << "Miaou !" << std::endl;	
+}

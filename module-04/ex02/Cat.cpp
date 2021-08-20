@@ -1,34 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   Cat.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sohechai <sohechai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/18 14:34:27 by sohechai          #+#    #+#             */
-/*   Updated: 2021/08/20 16:17:02 by sohechai         ###   ########lyon.fr   */
+/*   Created: 2021/08/18 14:41:16 by sohechai          #+#    #+#             */
+/*   Updated: 2021/08/19 15:52:19 by sohechai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL_HPP
-# define ANIMAL_HPP
-# include <iostream>
-# include <unistd.h>
+#include "Cat.hpp"
 
-class		Animal
+Cat::Cat()
 {
-	public:
+    this->type = "Cat";
+    this->_brain = new Brain();
+    std::cout << "Cat is born" << std::endl;
 
-	Animal();
-	virtual ~Animal(void);
+    return ;
+}
 
-    virtual void        makeSound() const;
-    std::string getType(void) const;
+Cat::~Cat(void)
+{
+    std::cout << "Cat is dead" << std::endl;
 
-	protected:
+    delete this->_brain;
 
-	std::string type;
+    return ;
+}
 
-};
-
-#endif
+void        Cat::makeSound() const
+{
+	std::cout << "Miaou !" << std::endl;	
+}
