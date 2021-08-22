@@ -1,41 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Ice.cpp                                            :+:      :+:    :+:   */
+/*   MateriaSource.hpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sohechai <sohechai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/20 16:59:17 by sohechai          #+#    #+#             */
-/*   Updated: 2021/08/22 18:19:47 by sohechai         ###   ########lyon.fr   */
+/*   Created: 2021/08/22 18:22:48 by sohechai          #+#    #+#             */
+/*   Updated: 2021/08/22 18:32:26 by sohechai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Ice.hpp"
+#ifndef MATERIASOURCE_HPP
+# define MATERIASOURCE_HPP
+# include <iostream>
+# include <unistd.h>
+# include "IMateriaSource.hpp"
 
-Ice::Ice() : AMateria("ice")
+class MateriaSource : public IMateriaSource
 {
-    return ;
-}
+    public:
 
-Ice::~Ice()
-{
-    return ;
-}
+	MateriaSource();
+	MateriaSource(const MateriaSource &src);
+    ~MateriaSource();
 
-// Ice& 			Ice::operator=(Ice const &src)
-// {
-// 	AMateria::operator=(src);
-// 	return *this;
-// }
+    void 		learnMateria(AMateria*);
+    AMateria* 	createMateria(std::string const & type);
 
-AMateria* Ice::clone() const
-{
-	return (new Ice());
-}
+	private:
 
-void    Ice::use(ICharacter& target)
-{
-    std::cout << "* heals " << &target << "’s wounds *" << std::endl;
+	AMateria	*_inventory[4];
+	int			_nb;
+};
 
-    return ;
-}
+#endif

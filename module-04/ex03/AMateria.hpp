@@ -6,7 +6,7 @@
 /*   By: sohechai <sohechai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/20 16:44:31 by sohechai          #+#    #+#             */
-/*   Updated: 2021/08/20 17:01:15 by sohechai         ###   ########lyon.fr   */
+/*   Updated: 2021/08/22 17:20:10 by sohechai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,13 +20,15 @@ class	AMateria
 {
 	protected:
 
-	std::string type;
+	std::string _type;
 
 	public:
 
 	AMateria();
 	AMateria(std::string const & type);
 	~AMateria();
+
+	AMateria& 			operator=(AMateria const &rhs);
 	std::string const & getType() const; //Returns the materia type
 	virtual AMateria* clone() const = 0;
 	virtual void use(ICharacter& target);
