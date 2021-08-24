@@ -1,38 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ClapTrap.hpp                                       :+:      :+:    :+:   */
+/*   PresidentialPardonForm.cpp                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sohechai <sohechai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/28 13:35:33 by sohechai          #+#    #+#             */
-/*   Updated: 2021/08/23 17:32:35 by sohechai         ###   ########lyon.fr   */
+/*   Created: 2021/08/24 21:40:30 by sohechai          #+#    #+#             */
+/*   Updated: 2021/08/24 22:28:04 by sohechai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CLAPTRAP_HPP
-# define CLAPTRAP_HPP
-# include <iostream>
-# include <unistd.h>
+#include "PresidentialPardonForm.hpp"
 
-class		ClapTrap
+PresidentialPardonForm::PresidentialPardonForm(std::string &target) : Form("PresidentialPardonForm", 25, 5)
 {
-	public:
+	return ;
+}
 
-	ClapTrap(std::string);
-	~ClapTrap(void);
+PresidentialPardonForm::~PresidentialPardonForm()
+{
+	return ;
+}
 
-	void				Attack(std::string const &target);
-	void				takeDamage(unsigned int amount);
-	void				beRepaired(unsigned int amount);
+void				PresidentialPardonForm::action(std::string &target)
+{
+	std::cout << &target << " has been forgiven by Zafod Beeblerox." << std::endl;
 
-	private:
-
-	std::string			_Name;
-	int					_HitPoints;
-	unsigned int		_EnergyPoints;
-	unsigned int		_AttackDamage;
-
-};
-
-#endif
+	return ;
+}

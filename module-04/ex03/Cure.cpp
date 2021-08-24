@@ -6,7 +6,7 @@
 /*   By: sohechai <sohechai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/20 17:01:28 by sohechai          #+#    #+#             */
-/*   Updated: 2021/08/22 18:19:15 by sohechai         ###   ########lyon.fr   */
+/*   Updated: 2021/08/23 16:35:11 by sohechai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@ Cure::Cure() : AMateria("cure")
 
 Cure::~Cure()
 {
-
     return ;
 }
 
@@ -38,7 +37,8 @@ AMateria* Cure::clone() const
 
 void    Cure::use(ICharacter& target)
 {
-    std::cout << "* shoots an ice bolt at " << &target << " *" << std::endl;
+	std::cout << "* heals " << target.getName() << "’s wounds *" << std::endl;
+
 
     return ;
 }

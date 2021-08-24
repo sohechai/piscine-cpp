@@ -6,7 +6,7 @@
 /*   By: sohechai <sohechai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/20 16:53:28 by sohechai          #+#    #+#             */
-/*   Updated: 2021/08/20 17:13:42 by sohechai         ###   ########lyon.fr   */
+/*   Updated: 2021/08/23 16:21:59 by sohechai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 #include "AMateria.hpp"
 #include "Ice.hpp"
 #include "Cure.hpp"
+#include "MateriaSource.hpp"
+#include "Character.hpp"
 
 int main()
 {

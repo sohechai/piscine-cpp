@@ -6,7 +6,7 @@
 /*   By: sohechai <sohechai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/23 19:17:01 by sohechai          #+#    #+#             */
-/*   Updated: 2021/08/24 21:32:44 by sohechai         ###   ########lyon.fr   */
+/*   Updated: 2021/08/24 22:25:37 by sohechai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,10 @@ class	Form
 	std::string					getname() const;
 	int							getgradeToSign() const;
 	int							getgradeToExecute() const;
-	bool						getSigned();
+	bool						getSigned() const;
 	void						beSigned(const Bureaucrat &b);
+	void						execute(Bureaucrat const &executor) const;
+	virtual void				action(std::string &target) = 0;
 
 
 	class 						GradeTooHighException : public std::exception
@@ -49,6 +51,33 @@ class	Form
 			virtual const char* what() const throw()
 			{
 				return ("Grade is too low");
+			}
+	};
+
+	class 						GradeTooHighExceptionToExecute : public std::exception
+	{
+		public:
+			virtual const char* what() const throw()
+			{
+				return ("Grade is too high to execute");
+			}
+	};
+
+	class 						GradeTooLowExceptionToExecute : public std::exception
+	{
+		public:
+			virtual const char* what() const throw()
+			{
+				return ("Grade is too low to execute");
+			}
+	};
+
+	class 						FormSignedException : public std::exception
+	{
+		public:
+			virtual const char* what() const throw()
+			{
+				return ("Form is already signed");
 			}
 	};
 

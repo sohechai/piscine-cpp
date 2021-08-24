@@ -6,7 +6,7 @@
 /*   By: sohechai <sohechai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/23 16:45:49 by sohechai          #+#    #+#             */
-/*   Updated: 2021/08/24 21:29:15 by sohechai         ###   ########lyon.fr   */
+/*   Updated: 2021/08/24 22:18:55 by sohechai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -116,6 +116,23 @@ void						Bureaucrat::signForm(Form *f) const
 				throw Form::GradeTooHighException();
 			}
 		}
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << '\n';
+	}
+
+	return ;
+}
+
+void						Bureaucrat::executeForm(Form const &form)
+{
+	try
+	{
+		form.execute(*this);
+		if (form.getSigned() == true)
+			std::cout << getname() << " executs " << form.getname() << "." << std::endl;
+		// sinon ajouter un message d'erreur explicite (peut etre dans execute ? voir avec le main)
 	}
 	catch(const std::exception& e)
 	{

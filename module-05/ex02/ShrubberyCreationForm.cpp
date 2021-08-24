@@ -1,47 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   AMateria.cpp                                       :+:      :+:    :+:   */
+/*   ShrubberyCreationForm.cpp                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sohechai <sohechai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/20 16:50:53 by sohechai          #+#    #+#             */
-/*   Updated: 2021/08/23 16:25:54 by sohechai         ###   ########lyon.fr   */
+/*   Created: 2021/08/24 21:40:39 by sohechai          #+#    #+#             */
+/*   Updated: 2021/08/24 22:50:29 by sohechai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "AMateria.hpp"
+#include "ShrubberyCreationForm.hpp"
 
-AMateria::AMateria()
+ShrubberyCreationForm::ShrubberyCreationForm(std::string &target) : Form("ShrubberyCreationForm", 145, 137)
 {
 	return ;
 }
 
-AMateria::AMateria(std::string const & type) : _type(type)
+ShrubberyCreationForm::~ShrubberyCreationForm()
 {
 	return ;
 }
 
-AMateria::~AMateria()
+void				ShrubberyCreationForm::action(std::string &target)
 {
-	return ;
-}
-
-AMateria& 			AMateria::operator=(AMateria const &rhs)
-{
-	if (this != &rhs)
-		this->_type = rhs._type;
-	return (*this);
-}
-
-std::string const & AMateria::getType() const //Returns the materia type
-{
-	return (this->_type);
-}
-
-void AMateria::use(ICharacter& target)
-{
-	(void)target;
+	std::cout << "Creating " << &target << "_shrubbery..." << std::endl;
+	std::ofstream	ofs(target + "_shrubbery");
+	ofs << "arbres";
+	ofs.close();
 
 	return ;
 }

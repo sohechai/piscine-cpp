@@ -6,7 +6,7 @@
 /*   By: sohechai <sohechai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/23 19:17:04 by sohechai          #+#    #+#             */
-/*   Updated: 2021/08/24 21:29:45 by sohechai         ###   ########lyon.fr   */
+/*   Updated: 2021/08/24 22:51:55 by sohechai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,7 @@ int							Form::getgradeToExecute() const
 	return (this->_gradeToExecute);
 }
 
-bool						Form::getSigned()
+bool						Form::getSigned() const
 {
 	return (this->_signed);
 }
@@ -83,6 +83,25 @@ void						Form::beSigned(const Bureaucrat &b)
 	{
 		if (b.getgrade() <= this->_gradeToSign)
 			this->_signed = true;
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << '\n';
+	}
+
+	return ;
+}
+
+void						Form::execute(Bureaucrat const &executor) const
+{
+	try
+	{
+		if (this->_signed == true)
+			throw Form::FormSignedException();
+		if (executor.getgrade() > getgradeToExecute())
+			throw Form::GradeTooLowExceptionToExecute();
+		if (executor.getgrade() <= getgradeToExecute())
+			// do things;
 	}
 	catch(const std::exception& e)
 	{

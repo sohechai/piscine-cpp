@@ -5,17 +5,13 @@
 #                                                     +:+ +:+         +:+      #
 #    By: sohechai <sohechai@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2021/08/18 16:55:15 by sohechai          #+#    #+#              #
-#    Updated: 2021/08/23 16:38:04 by sohechai         ###   ########lyon.fr    #
+#    Created: 2021/08/23 16:40:20 by sohechai          #+#    #+#              #
+#    Updated: 2021/08/23 16:41:34 by sohechai         ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
-SRCS		=	./Animal.cpp		\
-				./Brain.cpp			\
-				./Cat.cpp 			\
-				./Dog.cpp 			\
-				./WrongAnimal.cpp	\
-				./WrongCat.cpp 		\
+SRCS		=	./ClapTrap.cpp		\
+				./ScavTrap.cpp		\
 				./main.cpp
 
 GCC			= clang++

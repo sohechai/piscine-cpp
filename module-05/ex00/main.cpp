@@ -6,17 +6,15 @@
 /*   By: sohechai <sohechai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/23 16:45:53 by sohechai          #+#    #+#             */
-/*   Updated: 2021/08/24 21:31:19 by sohechai         ###   ########lyon.fr   */
+/*   Updated: 2021/08/23 19:10:38 by sohechai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
-#include "Form.hpp"
 
 int			main(void)
 {
-	Bureaucrat	*bob = new Bureaucrat("Bob", 30);
-	Form		*form = new Form("Work contract", 20, 20);
+	Bureaucrat	*bob = new Bureaucrat("bob", 150);
 
 	try
 	{
@@ -38,30 +36,11 @@ int			main(void)
 		std::cerr << e.what() << '\n';
 	}
 
-	try
-	{
-		if (form->getgradeToSign() < 1 || form->getgradeToExecute() < 1)
-		{
-			throw Form::GradeTooHighException();
-			delete form;
-		}
-		else if (form->getgradeToSign() > 150 || form->getgradeToExecute() > 150)
-		{
-			throw Form::GradeTooLowException();
-			delete form;
-		}
-		else
-		{
-			std::cout << *form;
-			bob->signForm(form);
-		}
-	}
-	catch(const std::exception& e)
-	{
-		std::cerr << e.what() << '\n';
-	}
+	bob->decrease();
+	std::cout << *bob;
 
+	bob->increase();
+	std::cout << *bob;
 
 	delete bob;
-	delete form;
 }

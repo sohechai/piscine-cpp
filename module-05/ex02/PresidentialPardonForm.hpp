@@ -1,38 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ClapTrap.hpp                                       :+:      :+:    :+:   */
+/*   PresidentialPardonForm.hpp                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sohechai <sohechai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/28 13:35:33 by sohechai          #+#    #+#             */
-/*   Updated: 2021/08/23 17:32:35 by sohechai         ###   ########lyon.fr   */
+/*   Created: 2021/08/24 21:40:32 by sohechai          #+#    #+#             */
+/*   Updated: 2021/08/24 22:25:50 by sohechai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CLAPTRAP_HPP
-# define CLAPTRAP_HPP
+#ifndef PRESIDENTIALPARDONFORM_HPP
+# define PRESIDENTIALPARDONFORM_HPP
 # include <iostream>
 # include <unistd.h>
+# include "Form.hpp"
 
-class		ClapTrap
+class PresidentialPardonForm : public Form
 {
-	public:
+public:
 
-	ClapTrap(std::string);
-	~ClapTrap(void);
+	PresidentialPardonForm(std::string &target);
+	~PresidentialPardonForm();
 
-	void				Attack(std::string const &target);
-	void				takeDamage(unsigned int amount);
-	void				beRepaired(unsigned int amount);
+	virtual void				action(std::string &target);
 
-	private:
-
-	std::string			_Name;
-	int					_HitPoints;
-	unsigned int		_EnergyPoints;
-	unsigned int		_AttackDamage;
-
+private:
+	/* data */
 };
+
+
+std::ostream&					operator << (std::ostream &o, Form const &i);
 
 #endif

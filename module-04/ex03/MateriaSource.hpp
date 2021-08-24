@@ -6,7 +6,7 @@
 /*   By: sohechai <sohechai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/22 18:22:48 by sohechai          #+#    #+#             */
-/*   Updated: 2021/08/22 18:32:26 by sohechai         ###   ########lyon.fr   */
+/*   Updated: 2021/08/23 16:32:38 by sohechai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,13 +24,13 @@ class MateriaSource : public IMateriaSource
 	MateriaSource(const MateriaSource &src);
     ~MateriaSource();
 
-    void 		learnMateria(AMateria*);
-    AMateria* 	createMateria(std::string const & type);
+	MateriaSource& 			operator=(MateriaSource const &rhs);
+    void 					learnMateria(AMateria*);
+    AMateria* 				createMateria(std::string const & type);
 
 	private:
 
-	AMateria	*_inventory[4];
-	int			_nb;
+	AMateria				*_inventory[4];
 };
 
 #endif

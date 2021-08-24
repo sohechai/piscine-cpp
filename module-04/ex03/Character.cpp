@@ -6,22 +6,49 @@
 /*   By: sohechai <sohechai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/22 16:02:44 by sohechai          #+#    #+#             */
-/*   Updated: 2021/08/22 18:17:32 by sohechai         ###   ########lyon.fr   */
+/*   Updated: 2021/08/23 16:31:25 by sohechai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Character.hpp"
 
-Character::Character(std::string name) : _name(name), _nb(0)
+Character::Character(std::string name) : _name(name)
 {
-	for (int i = 0; i <= 3; i++)
+	for (int i = 0; i < 4; i++)
 		this->_inventory[i] = NULL;
 	return ;
 }
 
 Character::~Character()
 {
+	for (int i = 0; i < 4; i++)
+	{
+		if (this->_inventory[i] != NULL)
+			delete this->_inventory[i];
+		this->_inventory[i] = NULL;
+	}
 	return ;
+}
+
+Character& 			Character::operator=(Character const &rhs)
+{
+	if (this != &rhs)
+	{
+		for(int i = 0; i < 4; i++)
+		{
+			if (this->_inventory[i] != NULL)
+				delete this->_inventory[i];
+			this->_inventory[i] = NULL;
+		}
+		for (int i = 0; i < 4; i++)
+		{
+			if (rhs._inventory[i] != NULL)
+				this->_inventory[i] = rhs._inventory[i]->clone();
+			else
+				this->_inventory[i] = NULL;
+		}
+	}
+	return (*this);
 }
 
 std::string const & Character::getName() const
@@ -31,31 +58,31 @@ std::string const & Character::getName() const
 
 void Character::equip(AMateria* m)
 {
-	if (m == 0 || this->_nb == 4)
+	if (m == 0)
 		return ;
-	if (this->_nb < 3)
+	for (int i = 0; i < 4; i++)
 	{
-		this->_inventory[this->_nb] = m;
-		this->_nb += 1;
+		if (this->_inventory[i] == NULL)
+		{
+			this->_inventory[i] = m;
+			return ;
+		}
 	}
 	return ;
 }
 
 void Character::unequip(int idx)
 {
-	if (idx >= this->_nb)
-		return ;
 	if (idx >= 0 && idx <= 3)
 	{
 		this->_inventory[idx] = NULL;
-		this->_nb -= 1;
 	}
 	return ;
 }
 
 void Character::use(int idx, ICharacter& target)
 {
-	if (idx < this->_nb)
+	if (idx >= 0 && idx <= 3 && this->_inventory[idx] != NULL)
 		this->_inventory[idx]->use(target);
 	return ;
 }

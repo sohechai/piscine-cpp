@@ -6,7 +6,7 @@
 /*   By: sohechai <sohechai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/23 16:45:49 by sohechai          #+#    #+#             */
-/*   Updated: 2021/08/24 21:29:15 by sohechai         ###   ########lyon.fr   */
+/*   Updated: 2021/08/23 19:08:07 by sohechai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,32 +90,6 @@ void						Bureaucrat::decrease()
 			throw GradeTooLowException(); // grade too low;
 		else
 			this->_grade += 1;
-	}
-	catch(const std::exception& e)
-	{
-		std::cerr << e.what() << '\n';
-	}
-
-	return ;
-}
-
-void						Bureaucrat::signForm(Form *f) const
-{
-	f->beSigned(*this);
-	try
-	{
-		if (f->getSigned() == true)
-			std::cout << getname() << " signs " << f->getname() << std::endl;
-		else
-		{
-			std::cout << getname() << " cannot sign because ";
-			if (f->getgradeToSign() < this->_grade)
-				throw Form::GradeTooLowException();
-			else
-			{
-				throw Form::GradeTooHighException();
-			}
-		}
 	}
 	catch(const std::exception& e)
 	{
