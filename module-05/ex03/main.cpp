@@ -6,7 +6,7 @@
 /*   By: sohechai <sohechai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/23 16:45:53 by sohechai          #+#    #+#             */
-/*   Updated: 2021/08/25 20:09:20 by sohechai         ###   ########lyon.fr   */
+/*   Updated: 2021/08/25 20:08:29 by sohechai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,7 +84,6 @@ int			main(void)
 	// sylvie->executeForm(*SCF);
 	// boss->signForm(SCF);
 
-	// TODO check leaks
 	delete bob;
 	delete boss;
 	delete sylvie;
