@@ -6,7 +6,7 @@
 /*   By: sohechai <sohechai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/25 20:13:15 by sohechai          #+#    #+#             */
-/*   Updated: 2021/08/25 21:20:00 by sohechai         ###   ########lyon.fr   */
+/*   Updated: 2021/08/25 21:33:53 by sohechai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ Intern::Intern()
 
 Intern::Intern(Intern &src)
 {
+	(void)src;
 	return ;
 }
 
@@ -37,7 +38,7 @@ Intern& 		Intern::operator=(Intern const &)
 Form			*Intern::makeForm(std::string name, std::string target)
 {
 	std::string tab[3] = {"Presidential request", "Robotomy request", "Shrubbery request"};
-	Form	*ptr[3] = {new PresidentialPardonForm(target), new RobotomyRequestForm(target), new ShrubberyCreationForm(target)};
+	Form		*ptr[3] = {new PresidentialPardonForm(target), new RobotomyRequestForm(target), new ShrubberyCreationForm(target)};
 
 	try
 	{
@@ -45,7 +46,12 @@ Form			*Intern::makeForm(std::string name, std::string target)
 		{
 			if (tab[i] == name)
 			{
-				std::cout << "Intern creates " << name;
+				std::cout << "Intern creates " << name << std::endl;
+				for (int idx = 0; idx < 3; idx++)
+				{
+					if (idx != i)
+						delete ptr[idx];
+				}
 				return (ptr[i]);
 			}
 		}
@@ -55,6 +61,8 @@ Form			*Intern::makeForm(std::string name, std::string target)
 	{
 		std::cerr << e.what() << '\n';
 	}
-}
 
-// TODO main, leaks
+	for (int i = 0; i < 3; i++)
+		delete ptr[i];
+	return (NULL);
+}

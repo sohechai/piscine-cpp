@@ -6,7 +6,7 @@
 /*   By: sohechai <sohechai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/23 16:45:53 by sohechai          #+#    #+#             */
-/*   Updated: 2021/08/25 20:08:29 by sohechai         ###   ########lyon.fr   */
+/*   Updated: 2021/08/25 21:28:50 by sohechai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,15 +15,20 @@
 #include "PresidentialPardonForm.hpp"
 #include "RobotomyRequestForm.hpp"
 #include "ShrubberyCreationForm.hpp"
+#include "Intern.hpp"
 
 int			main(void)
 {
 	Bureaucrat *boss = new Bureaucrat("Boss", 1);
 	Bureaucrat *bob = new Bureaucrat("Bob", 30);
 	Bureaucrat *sylvie = new Bureaucrat("Sylvie", 3);
-	PresidentialPardonForm *PPF = new PresidentialPardonForm("sofia");
-	RobotomyRequestForm *RRF = new RobotomyRequestForm("john");
-	ShrubberyCreationForm *SCF = new ShrubberyCreationForm("mike");
+
+	Intern		stagiaire1;
+	Form		*rrf = stagiaire1.makeForm("Robotomy request", "Bender");
+	Form		*ppf = stagiaire1.makeForm("Presidential request", "Bendo");
+	Form		*scf = stagiaire1.makeForm("Shrubbery request", "Allo");
+	Form		*bug = stagiaire1.makeForm("Inconnu request", "Bug");
+
 
 	try
 	{
@@ -67,17 +72,17 @@ int			main(void)
 
 	std::cout << "-------------------------" << std::endl;
 	// sign ok, execute ko
-	boss->signForm(PPF);
-	bob->executeForm(*PPF);
+	boss->signForm(ppf);
+	bob->executeForm(*ppf);
 	std::cout << "-------------------------" << std::endl;
 	// sign ok, execute ok,
-	boss->signForm(RRF);
-	sylvie->executeForm(*RRF);
+	boss->signForm(rrf);
+	sylvie->executeForm(*rrf);
 	std::cout << "-------------------------" << std::endl;
 	// sign ok execute ok sign ko
-	boss->signForm(SCF);
-	sylvie->executeForm(*SCF);
-	boss->signForm(SCF);
+	boss->signForm(scf);
+	sylvie->executeForm(*scf);
+	boss->signForm(scf);
 	// std::cout << "-------------------------" << std::endl;
 	// sign ko execute ko
 	// bob->signForm(PPF);
@@ -87,7 +92,8 @@ int			main(void)
 	delete bob;
 	delete boss;
 	delete sylvie;
-	delete PPF;
-	delete RRF;
-	delete SCF;
+	delete ppf;
+	delete rrf;
+	delete scf;
+	delete bug;
 }
