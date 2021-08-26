@@ -6,11 +6,16 @@
 /*   By: sohechai <sohechai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/28 13:35:31 by sohechai          #+#    #+#             */
-/*   Updated: 2021/03/31 11:29:50 by sohechai         ###   ########lyon.fr   */
+/*   Updated: 2021/08/26 19:12:53 by sohechai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
+
+ClapTrap::ClapTrap(void)
+{
+	return ;
+}
 
 ClapTrap::ClapTrap(std::string name) :
 									_Name(name),
@@ -26,6 +31,25 @@ ClapTrap::~ClapTrap(void)
 {
 	std::cout << std::endl << "\033[1;33mFR4G-TP I'M DEAD I'M DEAD OHMYGOD I'M DEAD!\033[00m" << std::endl;
 	return ;
+}
+
+ClapTrap::ClapTrap(const ClapTrap &src)
+{
+	*this = src;
+
+	return ;
+}
+
+ClapTrap& 				ClapTrap::operator=(ClapTrap const &rhs)
+{
+	if (this != &rhs)
+	{
+		_Name = rhs._Name;
+		_HitPoints = rhs._HitPoints;
+		_EnergyPoints = rhs._EnergyPoints;
+		_AttackDamage = rhs._AttackDamage;
+	}
+	return (*this);
 }
 
 void			ClapTrap::Attack(std::string const &target)

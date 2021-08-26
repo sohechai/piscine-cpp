@@ -6,11 +6,16 @@
 /*   By: sohechai <sohechai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/28 13:35:31 by sohechai          #+#    #+#             */
-/*   Updated: 2021/08/17 17:19:53 by sohechai         ###   ########lyon.fr   */
+/*   Updated: 2021/08/26 19:06:44 by sohechai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
+
+ClapTrap::ClapTrap(void)
+{
+	return ;
+}
 
 ClapTrap::ClapTrap(std::string name) :
 									_Name(name),
@@ -22,14 +27,10 @@ ClapTrap::ClapTrap(std::string name) :
 	return ;
 }
 
-
-ClapTrap::ClapTrap(std::string name, unsigned int HitPoints, unsigned int EnergyPoints, unsigned int AttackDamage) :
-									_Name(name),
-									_HitPoints(HitPoints),
-									_EnergyPoints(EnergyPoints),
-									_AttackDamage(AttackDamage)
+ClapTrap::ClapTrap(const ClapTrap &src)
 {
-	std::cout << "\033[1;33mCL4P-TP Hey everybody! Check out my package!\033[00m" << std::endl;
+	*this = src;
+
 	return ;
 }
 
@@ -37,6 +38,18 @@ ClapTrap::~ClapTrap(void)
 {
 	std::cout << "\033[1;33mCL4P-TP I'M DEAD I'M DEAD OHMYGOD I'M DEAD!\033[00m" << std::endl;
 	return ;
+}
+
+ClapTrap& 			ClapTrap::operator=(ClapTrap const &rhs)
+{
+	if (this != &rhs)
+	{
+		_Name = rhs._Name;
+		_HitPoints = rhs._HitPoints;
+		_EnergyPoints = rhs._EnergyPoints;
+		_AttackDamage = rhs._AttackDamage;
+	}
+	return (*this);
 }
 
 void			ClapTrap::Attack(std::string const &target)

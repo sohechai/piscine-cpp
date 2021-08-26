@@ -6,23 +6,50 @@
 /*   By: sohechai <sohechai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/29 12:54:31 by sohechai          #+#    #+#             */
-/*   Updated: 2021/03/31 12:05:02 by sohechai         ###   ########lyon.fr   */
+/*   Updated: 2021/08/26 18:59:57 by sohechai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScavTrap.hpp"
 
-ScavTrap::ScavTrap(std::string name) :
-									ClapTrap(name, 100, 50, 20)
+ScavTrap::ScavTrap(void)
 {
+	return ;
+}
+
+ScavTrap::ScavTrap(std::string name) :
+									ClapTrap(name)
+{
+	this->_HitPoints = 100;
+	this->_EnergyPoints = 50;
+	this->_AttackDamage = 20;
 	std::cout << "\033[1;33mSCAV-TP You versus me! Me versus you! Either way!\033[00m" << std::endl;
+	return ;
+}
+
+ScavTrap::ScavTrap(const ScavTrap &src)
+{
+	*this = src;
+
 	return ;
 }
 
 ScavTrap::~ScavTrap(void)
 {
-	std::cout << "\033[1;33mSCAV-TP Poop.\033[00m" << std::endl;
+	std::cout << "\033[1;33mSCAV-TP NOOO!\033[00m" << std::endl;
 	return ;
+}
+
+ScavTrap& 			ScavTrap::operator=(ScavTrap const &rhs)
+{
+	if (this != &rhs)
+	{
+		_Name = rhs._Name;
+		_HitPoints = rhs._HitPoints;
+		_EnergyPoints = rhs._EnergyPoints;
+		_AttackDamage = rhs._AttackDamage;
+	}
+	return (*this);
 }
 
 void			ScavTrap::Attack(std::string const &target)

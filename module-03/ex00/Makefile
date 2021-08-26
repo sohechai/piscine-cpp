@@ -6,11 +6,11 @@
 #    By: sohechai <sohechai@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/08/23 16:40:20 by sohechai          #+#    #+#              #
-#    Updated: 2021/08/23 16:40:44 by sohechai         ###   ########lyon.fr    #
+#    Updated: 2021/08/26 18:29:36 by sohechai         ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
-SRCS		=	./ClapTrap.cpp		\ 
+SRCS		=	./ClapTrap.cpp		\
 				./main.cpp
 
 GCC			= clang++
