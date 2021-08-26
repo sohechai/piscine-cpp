@@ -6,7 +6,7 @@
 /*   By: sohechai <sohechai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/28 13:35:33 by sohechai          #+#    #+#             */
-/*   Updated: 2021/08/23 17:32:35 by sohechai         ###   ########lyon.fr   */
+/*   Updated: 2021/08/26 16:10:24 by sohechai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,11 @@ class		ClapTrap
 {
 	public:
 
+	ClapTrap();
 	ClapTrap(std::string);
 	~ClapTrap(void);
 
+	ClapTrap& 			operator=(ClapTrap const &rhs);
 	void				Attack(std::string const &target);
 	void				takeDamage(unsigned int amount);
 	void				beRepaired(unsigned int amount);
