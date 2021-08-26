@@ -6,7 +6,7 @@
 /*   By: sohechai <sohechai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/24 21:40:32 by sohechai          #+#    #+#             */
-/*   Updated: 2021/08/25 19:07:14 by sohechai         ###   ########lyon.fr   */
+/*   Updated: 2021/08/26 20:27:56 by sohechai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ class PresidentialPardonForm : public Form
 {
 public:
 
+	PresidentialPardonForm();
 	PresidentialPardonForm(const std::string &target);
 	PresidentialPardonForm(PresidentialPardonForm &src);
 	virtual ~PresidentialPardonForm();
@@ -27,9 +28,6 @@ public:
 	PresidentialPardonForm& 		operator=(PresidentialPardonForm const &);
 
 	virtual void				action(const std::string &target) const;
-
-private:
-	/* data */
 };
 
 

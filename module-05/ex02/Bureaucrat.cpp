@@ -6,25 +6,19 @@
 /*   By: sohechai <sohechai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/23 16:45:49 by sohechai          #+#    #+#             */
-/*   Updated: 2021/08/25 20:04:05 by sohechai         ###   ########lyon.fr   */
+/*   Updated: 2021/08/26 20:26:46 by sohechai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 
+Bureaucrat::Bureaucrat()
+{
+	return ;
+}
+
 Bureaucrat::Bureaucrat(std::string name, int grade) : _name(name), _grade(grade)
 {
-	// try
-	// {
-	// 	if (this->_grade < 1)
-	// 		throw GradeTooHighException(); // grade too low;
-	// 	else if (this->_grade > 150)
-	// 		throw Bureaucrat::GradeTooLowException();
-	// }
-	// catch(const std::exception& e)
-	// {
-	// 	std::cerr << e.what() << '\n';
-	// }
 	return ;
 }
 

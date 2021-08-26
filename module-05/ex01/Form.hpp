@@ -6,7 +6,7 @@
 /*   By: sohechai <sohechai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/23 19:17:01 by sohechai          #+#    #+#             */
-/*   Updated: 2021/08/24 21:32:44 by sohechai         ###   ########lyon.fr   */
+/*   Updated: 2021/08/26 20:19:48 by sohechai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ class	Form
 	public:
 
 	Form(std::string name, int gradeToSign, int gradeToExecute);
+	Form(const Form &src);
 	~Form();
 
 	Form& 						operator=(Form const &rhs);
@@ -54,6 +55,7 @@ class	Form
 
 	private:
 
+	Form(void);
 	const std::string 			_name;
 	const int							_gradeToSign;
 	const int							_gradeToExecute;
@@ -63,3 +65,4 @@ class	Form
 std::ostream&					operator << (std::ostream &o, Form const &i);
 
 #endif
+

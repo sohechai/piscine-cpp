@@ -6,7 +6,7 @@
 /*   By: sohechai <sohechai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/23 16:45:51 by sohechai          #+#    #+#             */
-/*   Updated: 2021/08/23 18:34:52 by sohechai         ###   ########lyon.fr   */
+/*   Updated: 2021/08/26 20:18:14 by sohechai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,9 @@ class	Bureaucrat
 {
 	public:
 
+	Bureaucrat();
 	Bureaucrat(std::string name, int grade);
-	Bureaucrat(Bureaucrat &src);
+	Bureaucrat(const Bureaucrat &src);
 	~Bureaucrat();
 
 	Bureaucrat& 				operator=(Bureaucrat const &rhs);

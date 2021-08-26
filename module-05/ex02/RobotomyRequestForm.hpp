@@ -6,7 +6,7 @@
 /*   By: sohechai <sohechai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/24 21:40:36 by sohechai          #+#    #+#             */
-/*   Updated: 2021/08/25 19:08:08 by sohechai         ###   ########lyon.fr   */
+/*   Updated: 2021/08/26 20:28:17 by sohechai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ class RobotomyRequestForm : public Form
 {
 public:
 
+	RobotomyRequestForm();
 	RobotomyRequestForm(const std::string &target);
 	RobotomyRequestForm(RobotomyRequestForm &src);
 	virtual ~RobotomyRequestForm();

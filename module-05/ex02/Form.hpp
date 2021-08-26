@@ -6,7 +6,7 @@
 /*   By: sohechai <sohechai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/23 19:17:01 by sohechai          #+#    #+#             */
-/*   Updated: 2021/08/25 20:03:49 by sohechai         ###   ########lyon.fr   */
+/*   Updated: 2021/08/26 20:35:57 by sohechai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ class	Form
 	public:
 
 	Form(std::string name, int gradeToSign, int gradeToExecute, const std::string &target);
+	Form(const Form &src);
 	virtual ~Form();
 
 	Form& 						operator=(Form const &rhs);
@@ -94,6 +95,7 @@ class	Form
 
 	private:
 
+	Form();
 	const std::string 			_name;
 	const int					_gradeToSign;
 	const int					_gradeToExecute;

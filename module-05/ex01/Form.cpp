@@ -6,13 +6,16 @@
 /*   By: sohechai <sohechai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/23 19:17:04 by sohechai          #+#    #+#             */
-/*   Updated: 2021/08/24 21:29:45 by sohechai         ###   ########lyon.fr   */
+/*   Updated: 2021/08/26 20:24:24 by sohechai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Form.hpp"
 
-Form::Form(std::string name, int gradeToSign, int gradeToExecute) : _name(name), _gradeToSign(gradeToSign), _gradeToExecute(gradeToExecute), _signed(false)
+Form::Form(std::string name, int gradeToSign, int gradeToExecute) : _name(name),
+																	_gradeToSign(gradeToSign),
+																	_gradeToExecute(gradeToExecute),
+																	_signed(false)
 {
 	try
 	{
@@ -32,6 +35,13 @@ Form::Form(std::string name, int gradeToSign, int gradeToExecute) : _name(name),
 		std::cerr << e.what() << '\n';
 	}
 
+	return ;
+}
+
+Form::Form(const Form &src) : _gradeToSign(src.getgradeToSign()),
+							_gradeToExecute(src.getgradeToExecute())
+{
+	*this = src;
 	return ;
 }
 
