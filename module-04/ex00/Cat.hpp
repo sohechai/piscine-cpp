@@ -6,7 +6,7 @@
 /*   By: sohechai <sohechai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/18 14:38:42 by sohechai          #+#    #+#             */
-/*   Updated: 2021/08/18 16:25:55 by sohechai         ###   ########lyon.fr   */
+/*   Updated: 2021/08/26 19:33:44 by sohechai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,12 @@ class		Cat : public Animal
 	public:
 
 	Cat();
+	Cat(const Cat &src);
 	~Cat(void);
 
-    void        makeSound() const;
+	Cat& 			operator=(Cat const &rhs);
+
+    void        	makeSound() const;
 
 };
 

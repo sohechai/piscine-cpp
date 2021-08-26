@@ -6,7 +6,7 @@
 /*   By: sohechai <sohechai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/18 14:34:27 by sohechai          #+#    #+#             */
-/*   Updated: 2021/08/20 17:10:18 by sohechai         ###   ########lyon.fr   */
+/*   Updated: 2021/08/26 19:59:10 by sohechai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,15 @@
 # include <iostream>
 # include <unistd.h>
 
-class		AAnimal
+class		Animal
 {
 	public:
 
 	Animal();
+	Animal(const Animal &src);
 	virtual ~Animal(void);
+
+	Animal& 			operator=(Animal const &rhs);
 
     virtual void        makeSound() const = 0;
     std::string 		getType(void) const;

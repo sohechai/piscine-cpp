@@ -6,7 +6,7 @@
 /*   By: sohechai <sohechai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/18 14:34:29 by sohechai          #+#    #+#             */
-/*   Updated: 2021/08/18 16:14:58 by sohechai         ###   ########lyon.fr   */
+/*   Updated: 2021/08/26 19:51:51 by sohechai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,17 +17,32 @@ Animal::Animal()
 	std::cout << "An animal is born" << std::endl;
 }
 
+Animal::Animal(const Animal &src)
+{
+	*this = src;
+
+	return ;
+}
+
 Animal::~Animal(void)
 {
 	std::cout << "An animal is dead" << std::endl;
 }
 
-void        Animal::makeSound() const
+Animal& 			Animal::operator=(Animal const &rhs)
 {
-	std::cout << "I'm an animal !" << std::endl;	
+	if (this != &rhs)
+		type = rhs.type;
+
+	return (*this);
 }
 
-std::string Animal::getType(void) const
+void        		Animal::makeSound() const
+{
+	std::cout << "I'm an animal !" << std::endl;
+}
+
+std::string 		Animal::getType(void) const
 {
 	return (this->type);
 }

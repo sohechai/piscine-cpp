@@ -6,7 +6,7 @@
 /*   By: sohechai <sohechai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/18 14:38:47 by sohechai          #+#    #+#             */
-/*   Updated: 2021/08/20 16:22:34 by sohechai         ###   ########lyon.fr   */
+/*   Updated: 2021/08/26 19:58:47 by sohechai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,10 @@ class		Dog : public Animal
 	public:
 
 	Dog();
+	Dog(const Dog &src);
 	~Dog(void);
+
+	Dog& 				operator=(Dog const &rhs);
 
     virtual void        makeSound() const;
 

@@ -6,7 +6,7 @@
 /*   By: sohechai <sohechai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/18 14:34:27 by sohechai          #+#    #+#             */
-/*   Updated: 2021/08/18 16:25:56 by sohechai         ###   ########lyon.fr   */
+/*   Updated: 2021/08/26 19:29:00 by sohechai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,13 @@ class		Animal
 	public:
 
 	Animal();
+	Animal(const Animal &src);
 	virtual ~Animal(void);
 
+	Animal& 			operator=(Animal const &rhs);
+
     virtual void        makeSound() const;
-    std::string getType(void) const;
+    std::string 		getType(void) const;
 
 	protected:
 

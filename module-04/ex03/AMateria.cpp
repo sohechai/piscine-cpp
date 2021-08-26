@@ -6,7 +6,7 @@
 /*   By: sohechai <sohechai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/20 16:50:53 by sohechai          #+#    #+#             */
-/*   Updated: 2021/08/23 16:25:54 by sohechai         ###   ########lyon.fr   */
+/*   Updated: 2021/08/26 20:08:18 by sohechai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,11 @@ AMateria::AMateria()
 AMateria::AMateria(std::string const & type) : _type(type)
 {
 	return ;
+}
+
+AMateria::AMateria(const AMateria &src)
+{
+	*this = src;
 }
 
 AMateria::~AMateria()

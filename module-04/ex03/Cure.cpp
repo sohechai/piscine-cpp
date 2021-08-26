@@ -6,7 +6,7 @@
 /*   By: sohechai <sohechai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/20 17:01:28 by sohechai          #+#    #+#             */
-/*   Updated: 2021/08/23 16:35:11 by sohechai         ###   ########lyon.fr   */
+/*   Updated: 2021/08/26 20:11:53 by sohechai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,14 @@
 
 Cure::Cure() : AMateria("cure")
 {
-
     return ;
+}
+
+Cure::Cure(const Cure &src)
+{
+	*this = src;
+
+	return ;
 }
 
 Cure::~Cure()
@@ -23,12 +29,15 @@ Cure::~Cure()
     return ;
 }
 
-// Cure& 			Cure::operator=(Cure const &src)
-// {
-// 	AMateria::operator=(src);
+Cure& 			Cure::operator=(Cure const &rhs)
+{
+	if (this != &rhs)
+	{
+		_type = rhs._type;
+	}
 
-// 	return (*this);
-// }
+	return (*this);
+}
 
 AMateria* Cure::clone() const
 {

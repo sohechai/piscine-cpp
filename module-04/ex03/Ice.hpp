@@ -6,7 +6,7 @@
 /*   By: sohechai <sohechai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/20 16:55:30 by sohechai          #+#    #+#             */
-/*   Updated: 2021/08/23 16:32:38 by sohechai         ###   ########lyon.fr   */
+/*   Updated: 2021/08/26 20:10:20 by sohechai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,11 @@ class Ice : public AMateria
     public:
 
     Ice();
+	Ice(const Ice &src);
     ~Ice();
 
-	// Ice& 			operator=(Ice const &src);
+	Ice& 			operator=(Ice const &rhs);
+
 	AMateria* 			clone() const;
     virtual void 		use(ICharacter& target);
 };

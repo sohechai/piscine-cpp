@@ -6,7 +6,7 @@
 /*   By: sohechai <sohechai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/22 18:32:59 by sohechai          #+#    #+#             */
-/*   Updated: 2021/08/23 16:32:50 by sohechai         ###   ########lyon.fr   */
+/*   Updated: 2021/08/26 20:08:14 by sohechai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,11 @@ MateriaSource::MateriaSource()
 		this->_inventory[i] = NULL;
 
 	return ;
+}
+
+MateriaSource::MateriaSource(const MateriaSource &src)
+{
+	*this = src;
 }
 
 MateriaSource::~MateriaSource()

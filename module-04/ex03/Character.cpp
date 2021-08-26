@@ -6,16 +6,28 @@
 /*   By: sohechai <sohechai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/22 16:02:44 by sohechai          #+#    #+#             */
-/*   Updated: 2021/08/23 16:31:25 by sohechai         ###   ########lyon.fr   */
+/*   Updated: 2021/08/26 20:09:11 by sohechai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Character.hpp"
 
+Character::Character()
+{
+	return ;
+}
+
 Character::Character(std::string name) : _name(name)
 {
 	for (int i = 0; i < 4; i++)
 		this->_inventory[i] = NULL;
+	return ;
+}
+
+Character::Character(const Character &src)
+{
+	*this = src;
+
 	return ;
 }
 

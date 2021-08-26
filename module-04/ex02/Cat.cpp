@@ -6,7 +6,7 @@
 /*   By: sohechai <sohechai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/18 14:41:16 by sohechai          #+#    #+#             */
-/*   Updated: 2021/08/19 15:52:19 by sohechai         ###   ########lyon.fr   */
+/*   Updated: 2021/08/26 20:01:31 by sohechai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,13 @@ Cat::Cat()
     return ;
 }
 
+Cat::Cat(const Cat &src)
+{
+	*this = src;
+
+	return ;
+}
+
 Cat::~Cat(void)
 {
     std::cout << "Cat is dead" << std::endl;
@@ -30,7 +37,15 @@ Cat::~Cat(void)
     return ;
 }
 
-void        Cat::makeSound() const
+Cat& 			Cat::operator=(Cat const &rhs)
 {
-	std::cout << "Miaou !" << std::endl;	
+	if (this != &rhs)
+		type = rhs.type;
+
+	return (*this);
+}
+
+void       		Cat::makeSound() const
+{
+	std::cout << "Miaou !" << std::endl;
 }

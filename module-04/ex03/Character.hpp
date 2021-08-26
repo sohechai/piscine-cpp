@@ -6,7 +6,7 @@
 /*   By: sohechai <sohechai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/20 17:19:42 by sohechai          #+#    #+#             */
-/*   Updated: 2021/08/23 16:30:50 by sohechai         ###   ########lyon.fr   */
+/*   Updated: 2021/08/26 20:06:38 by sohechai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,13 @@ class Character : public ICharacter
 {
     public:
 
+	Character();
 	Character(std::string name);
+	Character(const Character &src);
     ~Character();
 
 	Character& 				operator=(Character const &rhs);
+
     std::string const & 	getName() const;
     void 					equip(AMateria* m);
     void 					unequip(int idx);

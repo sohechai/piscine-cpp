@@ -6,7 +6,7 @@
 /*   By: sohechai <sohechai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/18 17:00:34 by sohechai          #+#    #+#             */
-/*   Updated: 2021/08/18 17:30:02 by sohechai         ###   ########lyon.fr   */
+/*   Updated: 2021/08/26 19:58:48 by sohechai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,10 @@ class		Brain
 	public:
 
 	Brain();
+	Brain(const Brain &src);
 	~Brain(void);
+
+	Brain& 			operator=(Brain const &rhs);
 
     protected:
 

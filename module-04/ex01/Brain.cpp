@@ -6,7 +6,7 @@
 /*   By: sohechai <sohechai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/18 17:04:17 by sohechai          #+#    #+#             */
-/*   Updated: 2021/08/19 15:50:39 by sohechai         ###   ########lyon.fr   */
+/*   Updated: 2021/08/26 19:48:41 by sohechai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,16 @@
 
 Brain::Brain()
 {
+	for (int i = 0; i < 100; i++)
+		ideas[i] = "idea";
 	std::cout << "brain is up" << std::endl;
+
+	return ;
+}
+
+Brain::Brain(const Brain &src)
+{
+	*this = src;
 
 	return ;
 }
@@ -24,4 +33,15 @@ Brain::~Brain(void)
 	std::cout << "brain is over" << std::endl;
 
 	return ;
+}
+
+Brain& 			Brain::operator=(Brain const &rhs)
+{
+	if (this != &rhs)
+	{
+		for (int i = 0; i < 100; i++)
+			ideas[i] = rhs.ideas[i];
+	}
+
+	return (*this);
 }

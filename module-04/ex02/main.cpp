@@ -6,7 +6,7 @@
 /*   By: sohechai <sohechai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/18 14:34:31 by sohechai          #+#    #+#             */
-/*   Updated: 2021/08/19 16:01:27 by sohechai         ###   ########lyon.fr   */
+/*   Updated: 2021/08/26 20:03:26 by sohechai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,11 +25,12 @@ int main()
             zoo[i] = new Dog;
         else
             zoo[i] = new Cat;
-        std::cout << &(zoo[i]) << std::endl;
+        std::cout << "address of cat or dog: " << &(zoo[i]) << std::endl;
         std::cout << "_____________________________\n";
     }
     for (int i = 0; i < 10; i++)
     {
+		std::cout << "***" << std::endl;
         delete zoo[i];
     }
 }
