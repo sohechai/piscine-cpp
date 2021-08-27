@@ -6,9 +6,11 @@
 #    By: sohechai <sohechai@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/08/23 16:35:58 by sohechai          #+#    #+#              #
-#    Updated: 2021/08/23 16:37:44 by sohechai         ###   ########lyon.fr    #
+#    Updated: 2021/08/27 18:43:22 by sohechai         ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
+
+NAME			= exec
 
 SRCS		=	./AMateria.cpp		\
 				./Character.cpp		\
@@ -17,16 +19,27 @@ SRCS		=	./AMateria.cpp		\
 				./MateriaSource.cpp	\
 				./main.cpp
 
-GCC			= clang++
+OBJ				=       $(SRC:.cpp=.o)
 
-FLAGS		= -Wall -Werror -Wextra
+FLAGS			=       -Wall -Wextra -Werror
 
-all:
-	clang++ -Wall -Wextra -Werror $(SRCS)
+RM				=		rm -rf
+
+all: $(NAME)
+
+%.o: %.cpp
+		clang++ $(FLAGS) -c $< -o $@
+
+$(NAME): $(OBJ)
+		clang++ $(FLAGS) $(OBJ) -o $(NAME)
 
 clean:
-	@rm -f a.out
+		@${RM} ${OBJ}
+		@echo "\033[91m\n./$(NAME) and *.o have been deleted\n\n$(NAME) is now clean"
 
-re:     clean all
+fclean: clean
+		@${RM} ${NAME}
 
-.PHONY: all clean re
+re: fclean all
+
+.PHONY: all clean flclean re
