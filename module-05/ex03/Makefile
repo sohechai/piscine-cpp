@@ -6,24 +6,41 @@
 #    By: sohechai <sohechai@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/08/23 16:45:55 by sohechai          #+#    #+#              #
-#    Updated: 2021/08/26 20:29:52 by sohechai         ###   ########lyon.fr    #
+#    Updated: 2021/09/08 14:45:34 by sohechai         ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
-SRCS		=	./Bureaucrat.cpp		\
-				./main.cpp
+NAME			= exec
 
-GCC			= clang++
+SRC				=	./Bureaucrat.cpp				\
+					./Form.cpp						\
+					./PresidentialPardonForm.cpp	\
+					./RobotomyRequestForm.cpp		\
+					./ShrubberyCreationForm.cpp		\
+					./Intern.cpp					\
+					./main.cpp
 
-FLAGS		= -Wall -Werror -Wextra
+OBJ				=       $(SRC:.cpp=.o)
 
-all:
-	clang++ -Wall -Wextra -Werror $(SRCS)
+FLAGS			=       -Wall -Wextra -Werror
+
+RM				=		rm -rf
+
+all: $(NAME)
+
+%.o: %.cpp
+		clang++ $(FLAGS) -c $< -o $@
+
+$(NAME): $(OBJ)
+		clang++ $(FLAGS) $(OBJ) -o $(NAME)
 
 clean:
-	@rm -f a.out
-	@rm -f *_shrubbery
+		@${RM} ${OBJ}
+		@echo "\033[91m\n./$(NAME) and *.o have been deleted\n\n$(NAME) is now clean"
 
-re:     clean all
+fclean: clean
+		@${RM} ${NAME}
 
-.PHONY: all clean re
+re: fclean all
+
+.PHONY: all clean flclean re

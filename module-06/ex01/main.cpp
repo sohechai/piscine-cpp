@@ -6,21 +6,17 @@
 /*   By: sohechai <sohechai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/03 13:34:13 by sohechai          #+#    #+#             */
-/*   Updated: 2021/09/03 14:09:45 by sohechai         ###   ########lyon.fr   */
+/*   Updated: 2021/09/09 14:52:01 by sohechai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
-
-// Data structure
 
 struct Data
 {
 		std::string		data_name;
 		int				data_nb;
 };
-
-// unsigned int that is capable of storing data pointer, same size as a pointer
 
 uintptr_t 		serialize(Data *ptr)
 {

@@ -6,7 +6,7 @@
 /*   By: sohechai <sohechai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/20 16:53:28 by sohechai          #+#    #+#             */
-/*   Updated: 2021/08/23 16:21:59 by sohechai         ###   ########lyon.fr   */
+/*   Updated: 2021/09/08 17:59:22 by sohechai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ int main()
     delete bob;
     delete me;
     delete src;
+    // delete tmp;
 
     return 0;
 }

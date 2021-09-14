@@ -6,7 +6,7 @@
 /*   By: sohechai <sohechai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/23 19:17:04 by sohechai          #+#    #+#             */
-/*   Updated: 2021/08/26 20:27:38 by sohechai         ###   ########lyon.fr   */
+/*   Updated: 2021/09/08 14:34:35 by sohechai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,15 +22,13 @@ Form::Form(std::string name, int gradeToSign, int gradeToExecute, const std::str
 	try
 	{
 		if (gradeToSign < 1)
-			Form::GradeTooHighException();
+			throw	GradeTooHighException();
 		if (gradeToSign > 150)
-			Form::GradeTooLowException();
+			throw	GradeTooLowException();
 		if (gradeToExecute < 1)
-			Form::GradeTooHighException();
+			throw	GradeTooHighException();
 		if (gradeToExecute > 150)
-			Form::GradeTooLowException();
-		else
-			return ;
+			throw	GradeTooLowException();
 	}
 	catch(const std::exception& e)
 	{

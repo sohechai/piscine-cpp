@@ -6,7 +6,7 @@
 /*   By: sohechai <sohechai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/06 16:08:15 by sohechai          #+#    #+#             */
-/*   Updated: 2021/09/06 16:31:54 by sohechai         ###   ########lyon.fr   */
+/*   Updated: 2021/09/10 14:30:53 by sohechai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ int		main(void)
 	Array<char>		chararray(5);
 	Array<char>		cpychararray;
 
+	std::cout << "array of int :" << std::endl;
 	for(size_t i = 0; i < intarray.size(); i++)
 		intarray[i] = 5;
 	for(size_t i = 0; i < intarray.size(); i++)
@@ -26,6 +27,7 @@ int		main(void)
 
 	std::cout << "--" << std::endl;
 
+	std::cout << "array of char :" << std::endl;
 	for(size_t i = 0; i < chararray.size(); i++)
 		chararray[i] = 's';
 	for(size_t i = 0; i < chararray.size(); i++)
@@ -34,7 +36,7 @@ int		main(void)
 	std::cout << "--" << std::endl;
 
 	cpychararray = chararray;
-
+	std::cout << "copy array of char :" << std::endl;
 	for(size_t i = 0; i < cpychararray.size(); i++)
 		std::cout << cpychararray[i] << std::endl;
 

@@ -6,7 +6,7 @@
 /*   By: sohechai <sohechai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/06 18:27:18 by sohechai          #+#    #+#             */
-/*   Updated: 2021/09/06 18:37:18 by sohechai         ###   ########lyon.fr   */
+/*   Updated: 2021/09/14 17:39:06 by sohechai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ span::span() : _size(0)
 	return ;
 }
 
-span::span(unsigned int N) : _size(N)
+span::span(unsigned int N) : _size(N), _place(N)
 {
 	return ;
 }
@@ -41,18 +41,53 @@ span& 				span::operator=(span const &rhs)
 	return (*this);
 }
 
-void					span::addNumber(int n)
+void				span::addNumber(int n)
 {
+	if (this->_place == 0)
+			throw	ObjectFullException();
+
+	_tab.push_back(n);
+	this->_place--;
+
+	return ;
+}
+
+void				span::addNumberrange(int range)
+{
+	if (this->_place == 0)
+			throw	ObjectFullException();
+
+	for (int i = 0; i < range; i++)
+		_tab.push_back(i);
+	this->_place--;
 
 	return ;
 }
 
 int					span::shortestSpan()
 {
-	return ();
+	int shortest = 1;
+
+	if (this->_size <= 1)
+		throw	NoSpanToFindException();
+	else
+	{
+		std::vector<int>::iterator	it = this->_tab.begin();
+		shortest = *it;
+		for (it = this->_tab.begin() + 1; it != this->_tab.end(); ++it)
+		{
+			if ((*it - *(it -1)) > 0 && (*it - *(it - 1)) < shortest)
+				shortest = (*it - *(it - 1));
+			else if ((*it - *(it -1)) < 0 && (*(it - 1) - *it) < shortest)
+				shortest = (*(it - 1) - *it);
+		}
+	}
+	return (shortest);
 }
 
 int					span::longestSpan()
 {
-	return ();
+	if (this->_size <= 1)
+		throw	NoSpanToFindException();
+	return (*std::max_element(_tab.begin(), _tab.end()) - *std::min_element(_tab.begin(), _tab.end()));
 }

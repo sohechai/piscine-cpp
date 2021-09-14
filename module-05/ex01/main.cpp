@@ -6,7 +6,7 @@
 /*   By: sohechai <sohechai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/23 16:45:53 by sohechai          #+#    #+#             */
-/*   Updated: 2021/08/24 21:31:19 by sohechai         ###   ########lyon.fr   */
+/*   Updated: 2021/09/08 14:32:30 by sohechai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,52 +15,34 @@
 
 int			main(void)
 {
-	Bureaucrat	*bob = new Bureaucrat("Bob", 30);
-	Form		*form = new Form("Work contract", 20, 20);
+	Bureaucrat	*bob;
+	Form		*form;
 
 	try
 	{
-		if (bob->getgrade() < 1)
-		{
-			throw Bureaucrat::GradeTooHighException();
-			delete bob;
-		}
-		else if (bob->getgrade() > 150)
-		{
-			throw Bureaucrat::GradeTooLowException();
-			delete bob;
-		}
-		else
-			std::cout << *bob;
+		bob = new Bureaucrat("Bob", 30);
 	}
 	catch(const std::exception& e)
 	{
 		std::cerr << e.what() << '\n';
+		return (0);
 	}
+	
+	std::cout << *bob;
 
 	try
 	{
-		if (form->getgradeToSign() < 1 || form->getgradeToExecute() < 1)
-		{
-			throw Form::GradeTooHighException();
-			delete form;
-		}
-		else if (form->getgradeToSign() > 150 || form->getgradeToExecute() > 150)
-		{
-			throw Form::GradeTooLowException();
-			delete form;
-		}
-		else
-		{
-			std::cout << *form;
-			bob->signForm(form);
-		}
+		form = new Form("Work contract", 10, 20);
 	}
 	catch(const std::exception& e)
 	{
 		std::cerr << e.what() << '\n';
+		delete bob;
+		return (0);
 	}
 
+	std::cout << *form;
+	bob->signForm(form);
 
 	delete bob;
 	delete form;

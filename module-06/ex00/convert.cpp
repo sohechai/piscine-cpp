@@ -6,7 +6,7 @@
 /*   By: sohechai <sohechai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/31 16:09:49 by sohechai          #+#    #+#             */
-/*   Updated: 2021/08/31 18:40:57 by sohechai         ###   ########lyon.fr   */
+/*   Updated: 2021/09/09 15:01:47 by sohechai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ void					Convert::toChar()
 
 	try
 	{
-		c = (char(std::stoi(this->_value)));
+		c = (static_cast<char>(std::stoi(this->_value)));
 	}
 	catch(const std::exception& e)
 	{
@@ -61,7 +61,7 @@ void					Convert::toChar()
 		return ;
 	}
 	if (c >= 33 && c <= 127)
-		std::cout << "'" << (char(std::stoi(this->_value))) << "'" << std::endl;
+		std::cout << "'" << (static_cast<char>(std::stoi(this->_value))) << "'" << std::endl;
 	else
 		std::cout << "Non displayable" << std::endl;
 
@@ -73,7 +73,7 @@ void					Convert::toInt()
 	std::cout << "int: ";
 	try
 	{
-		std::cout << (int)(std::stoi(this->_value)) << std::endl;
+		std::cout << static_cast<int>(std::stoi(this->_value)) << std::endl;
 	}
 	catch(const std::exception& e)
 	{

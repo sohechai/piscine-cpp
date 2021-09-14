@@ -6,7 +6,7 @@
 /*   By: sohechai <sohechai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/03 14:21:03 by sohechai          #+#    #+#             */
-/*   Updated: 2021/09/03 14:59:40 by sohechai         ###   ########lyon.fr   */
+/*   Updated: 2021/09/09 15:23:54 by sohechai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,11 +84,11 @@ void		identify(Base &p)
 int main(void)
 {
 	Base *b = generate();
-	std::cout << "identify base ptr= " << std::endl;
+	std::cout << "identify base ptr = ";
 	identify(b);
 
 	Base &r = *b;
-	std::cout << "identify base ref= " << std::endl;
+	std::cout << "identify base ref = ";
 	identify(r);
 
 	delete (b);

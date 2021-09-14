@@ -6,13 +6,13 @@
 #    By: sohechai <sohechai@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/08/23 16:35:58 by sohechai          #+#    #+#              #
-#    Updated: 2021/08/27 18:43:22 by sohechai         ###   ########lyon.fr    #
+#    Updated: 2021/09/08 17:54:12 by sohechai         ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
 NAME			= exec
 
-SRCS		=	./AMateria.cpp		\
+SRC		=	./AMateria.cpp		\
 				./Character.cpp		\
 				./Cure.cpp			\
 				./Ice.cpp			\

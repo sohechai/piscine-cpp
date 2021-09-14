@@ -6,11 +6,11 @@
 /*   By: sohechai <sohechai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/03 15:02:36 by sohechai          #+#    #+#             */
-/*   Updated: 2021/09/05 15:38:56 by sohechai         ###   ########lyon.fr   */
+/*   Updated: 2021/09/10 14:20:59 by sohechai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "module07.hpp"
+#include "whatever.hpp"
 
 int main(void)
 {
@@ -23,6 +23,8 @@ int main(void)
 	std::cout << "a = " << a << ", b = " << b << std::endl;
 	std::cout << "min( a, b ) = " << ::min(a, b) << std::endl;
 	std::cout << "max( a, b ) = " << ::max(a, b) << std::endl;
+
+	std::cout << "------" << std::endl;
 
 	std::string c = "chaine1";
 	std::string d = "chaine2";

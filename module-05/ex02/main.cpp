@@ -6,7 +6,7 @@
 /*   By: sohechai <sohechai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/23 16:45:53 by sohechai          #+#    #+#             */
-/*   Updated: 2021/08/26 20:29:09 by sohechai         ###   ########lyon.fr   */
+/*   Updated: 2021/09/08 14:44:53 by sohechai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,52 +18,53 @@
 
 int			main(void)
 {
-	Bureaucrat *boss = new Bureaucrat("Boss", 1);
-	Bureaucrat *bob = new Bureaucrat("Bob", 30);
-	Bureaucrat *sylvie = new Bureaucrat("Sylvie", 3);
+	Bureaucrat *boss;
+	Bureaucrat *bob;
+	Bureaucrat *sylvie;
 	PresidentialPardonForm *PPF = new PresidentialPardonForm("sofia");
 	RobotomyRequestForm *RRF = new RobotomyRequestForm("john");
 	ShrubberyCreationForm *SCF = new ShrubberyCreationForm("mike");
 
 	try
 	{
-		if (bob->getgrade() < 1)
-		{
-			throw Bureaucrat::GradeTooHighException();
-			delete bob;
-		}
-		else if (bob->getgrade() > 150)
-		{
-			throw Bureaucrat::GradeTooLowException();
-			delete bob;
-		}
-		else
-			std::cout << *bob;
+		boss = new Bureaucrat("Boss", 1);
 	}
 	catch(const std::exception& e)
 	{
 		std::cerr << e.what() << '\n';
+
+		return (0);
 	}
+
+	std::cout << *boss;
 
 	try
 	{
-		if (boss->getgrade() < 1)
-		{
-			throw Bureaucrat::GradeTooHighException();
-			delete boss;
-		}
-		else if (boss->getgrade() > 150)
-		{
-			throw Bureaucrat::GradeTooLowException();
-			delete boss;
-		}
-		else
-			std::cout << *boss;
+		bob = new Bureaucrat("Bob", 30);
 	}
 	catch(const std::exception& e)
 	{
 		std::cerr << e.what() << '\n';
+		delete boss;
+
+		return (0);
 	}
+
+	std::cout << *bob;
+
+	try
+	{
+		sylvie = new Bureaucrat("Sylvie", 3);
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << '\n';
+		delete bob;
+		delete boss;
+
+		return (0);
+	}
+	std::cout << *sylvie;
 
 	std::cout << "-------------------------" << std::endl;
 	// sign ok, execute ko
@@ -79,10 +80,8 @@ int			main(void)
 	sylvie->executeForm(*SCF);
 	boss->signForm(SCF);
 	// std::cout << "-------------------------" << std::endl;
-	// sign ko execute ko
-	// bob->signForm(PPF);
+	// // execute ko
 	// sylvie->executeForm(*SCF);
-	// boss->signForm(SCF);
 
 	delete bob;
 	delete boss;

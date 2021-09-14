@@ -6,7 +6,7 @@
 /*   By: sohechai <sohechai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/25 20:13:15 by sohechai          #+#    #+#             */
-/*   Updated: 2021/08/25 21:33:53 by sohechai         ###   ########lyon.fr   */
+/*   Updated: 2021/09/08 15:36:55 by sohechai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 Intern::Intern()
 {
-
 	return ;
 }
 
